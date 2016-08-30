@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F1712" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="AvenirLTStd-Heavy.otf">
+            <string>AvenirLTStd-Heavy</string>
+        </mutableArray>
+        <mutableArray key="AvenirLTStd-Light.otf">
+            <string>AvenirLTStd-Light</string>
+            <string>AvenirLTStd-Light</string>
+            <string>AvenirLTStd-Light</string>
+            <string>AvenirLTStd-Light</string>
+            <string>AvenirLTStd-Light</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PromotionCollectionViewCell" id="gTV-IL-0wX" customClass="PromotionCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="160" height="184"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="160" height="184"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="event-img-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="wlL-K4-3iU">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="109"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JVv-7J-aKn">
+                        <rect key="frame" x="0.0" y="109" width="160" height="75"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98y-7N-nm8">
+                                <rect key="frame" x="0.0" y="23" width="158" height="18"/>
+                                <fontDescription key="fontDescription" name="AvenirLTStd-Light" family="Avenir LT Std" pointSize="13"/>
+                                <color key="textColor" red="0.94709181750000004" green="0.41899986449999999" blue="0.017010753930000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label Label Label Label Label Label Label Label Label Label Label Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9U-mz-P1b">
+                                <rect key="frame" x="0.0" y="46" width="158" height="29"/>
+                                <fontDescription key="fontDescription" name="AvenirLTStd-Light" family="Avenir LT Std" pointSize="13"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uho-Df-rex">
+                                <rect key="frame" x="103" y="8" width="5" height="5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sx9-ZD-BLR">
+                                <rect key="frame" x="0.0" y="0.0" width="95" height="18"/>
+                                <fontDescription key="fontDescription" name="AvenirLTStd-Heavy" family="Avenir LT Std" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12.5 KM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukA-Tn-GTT">
+                                <rect key="frame" x="113" y="0.0" width="45" height="18"/>
+                                <fontDescription key="fontDescription" name="AvenirLTStd-Light" family="Avenir LT Std" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="75" id="NUe-hc-y1b"/>
+                        </constraints>
+                    </view>
+                    <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ouE-Zb-bPq">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="30"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QX7-4d-6Y4">
+                                <rect key="frame" x="5" y="4" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="8CH-K2-Cmv"/>
+                                    <constraint firstAttribute="width" constant="42" id="k6J-2W-T44"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirLTStd-Light" family="Avenir LT Std" pointSize="13"/>
+                                <color key="textColor" red="0.45882352939999999" green="0.85735417489731547" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHA-S1-wBi">
+                                <rect key="frame" x="57" y="4" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="b21-Ov-vdi"/>
+                                    <constraint firstAttribute="width" constant="42" id="cTG-Kf-FRp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirLTStd-Light" family="Avenir LT Std" pointSize="13"/>
+                                <color key="textColor" red="0.94709181750000004" green="0.41899986449999999" blue="0.017010753930000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XHA-S1-wBi" firstAttribute="top" secondItem="ouE-Zb-bPq" secondAttribute="top" constant="4" id="410-5a-VnQ"/>
+                            <constraint firstItem="QX7-4d-6Y4" firstAttribute="top" secondItem="ouE-Zb-bPq" secondAttribute="top" constant="4" id="g7Z-Wt-VfY"/>
+                            <constraint firstItem="QX7-4d-6Y4" firstAttribute="leading" secondItem="ouE-Zb-bPq" secondAttribute="leading" constant="5" id="kiO-lz-euI"/>
+                            <constraint firstItem="XHA-S1-wBi" firstAttribute="leading" secondItem="QX7-4d-6Y4" secondAttribute="trailing" constant="10" id="nh2-B8-65e"/>
+                            <constraint firstAttribute="height" constant="30" id="pgn-c5-rZH"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="ouE-Zb-bPq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="0HF-XU-w3I"/>
+                <constraint firstItem="wlL-K4-3iU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="40J-nj-6Bw"/>
+                <constraint firstAttribute="trailing" secondItem="JVv-7J-aKn" secondAttribute="trailing" id="654-E8-3C8"/>
+                <constraint firstAttribute="trailing" secondItem="ouE-Zb-bPq" secondAttribute="trailing" id="HVa-KM-Md3"/>
+                <constraint firstAttribute="trailing" secondItem="wlL-K4-3iU" secondAttribute="trailing" id="HdK-Ph-G66"/>
+                <constraint firstItem="JVv-7J-aKn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="PS1-I1-5an"/>
+                <constraint firstItem="wlL-K4-3iU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="UeD-Sh-hTb"/>
+                <constraint firstItem="ouE-Zb-bPq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="di9-tq-HYI"/>
+                <constraint firstAttribute="bottom" secondItem="JVv-7J-aKn" secondAttribute="bottom" id="jdb-r4-EuZ"/>
+                <constraint firstItem="JVv-7J-aKn" firstAttribute="top" secondItem="wlL-K4-3iU" secondAttribute="bottom" id="raT-yx-egL"/>
+            </constraints>
+            <size key="customSize" width="160" height="184"/>
+            <connections>
+                <outlet property="imgGreenDot" destination="uho-Df-rex" id="QZZ-gC-GU2"/>
+                <outlet property="imgPromotion" destination="wlL-K4-3iU" id="ZQd-P6-Fr5"/>
+                <outlet property="lblCompanyname" destination="Sx9-ZD-BLR" id="gz2-K6-iOt"/>
+                <outlet property="lblDescription" destination="U9U-mz-P1b" id="NFz-Xt-d72"/>
+                <outlet property="lblDiscount" destination="XHA-S1-wBi" id="5zk-ey-6Xg"/>
+                <outlet property="lblDiscountWidth" destination="cTG-Kf-FRp" id="zek-XL-NUv"/>
+                <outlet property="lblPrice" destination="QX7-4d-6Y4" id="2Oe-P2-fXR"/>
+                <outlet property="lblPriceWidth" destination="k6J-2W-T44" id="Ko0-gN-MT9"/>
+                <outlet property="lblType" destination="98y-7N-nm8" id="Y6t-Gj-CgR"/>
+            </connections>
+            <point key="canvasLocation" x="215" y="305"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="event-img-placeholder" width="320" height="172"/>
+    </resources>
+</document>

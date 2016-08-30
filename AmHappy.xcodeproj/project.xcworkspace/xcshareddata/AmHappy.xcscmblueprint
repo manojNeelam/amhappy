@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "9AB79605806EFE27C341FD3419E614995A44898A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "0d86170d-9f21-6a47-885b-b6d22dd9be9f++3728" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "9AB79605806EFE27C341FD3419E614995A44898A" : 0,
+    "0d86170d-9f21-6a47-885b-b6d22dd9be9f++3728" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B633996A-45EA-4D72-B927-1F5AE0D97FCD",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "9AB79605806EFE27C341FD3419E614995A44898A" : "amhappy\/",
+    "0d86170d-9f21-6a47-885b-b6d22dd9be9f++3728" : "amhappy\/AmHappy\/HelperClasses\/JSON\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "AmHappy",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "AmHappy.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/192.168.1.101\/Unison_Projects",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0d86170d-9f21-6a47-885b-b6d22dd9be9f++3728"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/peerbits-admin\/amhappy.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9AB79605806EFE27C341FD3419E614995A44898A"
+    }
+  ]
+}

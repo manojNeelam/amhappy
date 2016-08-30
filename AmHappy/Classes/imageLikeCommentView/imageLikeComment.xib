@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="AvenirLTStd-Roman.otf">
+            <string>AvenirLTStd-Roman</string>
+            <string>AvenirLTStd-Roman</string>
+            <string>AvenirLTStd-Roman</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view alpha="0.74999999999999989" contentMode="scaleToFill" id="iN0-l3-epB" customClass="imageLikeComment">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7h2-YM-SMK" userLabel="ViewlikeComment">
+                    <rect key="frame" x="6" y="-5" width="314" height="55"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCR-bF-mly" userLabel="btnLike">
+                            <rect key="frame" x="0.0" y="6" width="32" height="34"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="34" id="Sce-WO-d4J"/>
+                                <constraint firstAttribute="width" constant="32" id="ovm-z0-DmW"/>
+                            </constraints>
+                            <state key="normal" image="like1">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Likes" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ajJ-bz-jRN" userLabel="lblLikes">
+                            <rect key="frame" x="30" y="3" width="48" height="40"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="48" id="nRN-Y1-G4N"/>
+                                <constraint firstAttribute="height" constant="40" id="o36-aR-rE9"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="AvenirLTStd-Roman" family="Avenir LT Std" pointSize="11"/>
+                            <color key="textColor" red="0.4823529411764706" green="0.49019607843137253" blue="0.49411764705882355" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izE-3P-chS" userLabel="btnComments">
+                            <rect key="frame" x="79" y="6" width="32" height="34"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="32" id="10v-gf-hwa"/>
+                                <constraint firstAttribute="height" constant="34" id="iSQ-i5-Eez"/>
+                            </constraints>
+                            <state key="normal" image="commentIcon">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25 Comments" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zJc-Ka-1he" userLabel="lblComments">
+                            <rect key="frame" x="113" y="3" width="85" height="40"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="85" id="gh0-fz-lTM"/>
+                                <constraint firstAttribute="height" constant="40" id="kce-Vt-gli"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="AvenirLTStd-Roman" family="Avenir LT Std" pointSize="11"/>
+                            <color key="textColor" red="0.4823529411764706" green="0.49019607843137253" blue="0.49411764705882355" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="TCR-bF-mly" firstAttribute="leading" secondItem="7h2-YM-SMK" secondAttribute="leading" id="Ck1-zQ-RwT"/>
+                        <constraint firstItem="ajJ-bz-jRN" firstAttribute="centerY" secondItem="TCR-bF-mly" secondAttribute="centerY" id="CsX-rC-ZFu"/>
+                        <constraint firstItem="izE-3P-chS" firstAttribute="leading" secondItem="ajJ-bz-jRN" secondAttribute="trailing" constant="1" id="NNH-JF-eK8"/>
+                        <constraint firstItem="zJc-Ka-1he" firstAttribute="leading" secondItem="izE-3P-chS" secondAttribute="trailing" constant="2" id="ONo-1C-WXa"/>
+                        <constraint firstItem="ajJ-bz-jRN" firstAttribute="leading" secondItem="TCR-bF-mly" secondAttribute="trailing" constant="-2" id="kNW-NZ-3oG"/>
+                        <constraint firstItem="TCR-bF-mly" firstAttribute="top" secondItem="7h2-YM-SMK" secondAttribute="top" constant="6" id="p3u-C2-oUi"/>
+                        <constraint firstItem="ajJ-bz-jRN" firstAttribute="top" secondItem="TCR-bF-mly" secondAttribute="top" constant="-3" id="qHt-Q4-CGK"/>
+                        <constraint firstItem="zJc-Ka-1he" firstAttribute="top" secondItem="izE-3P-chS" secondAttribute="top" constant="-3" id="rrO-cK-9z1"/>
+                        <constraint firstItem="ajJ-bz-jRN" firstAttribute="top" secondItem="izE-3P-chS" secondAttribute="top" constant="-3" id="uC5-vr-528"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fi9-sM-lrG" userLabel="lblDescription">
+                    <rect key="frame" x="5" y="5" width="310" height="0.0"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="wLe-eD-c5l"/>
+                    </constraints>
+                    <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+                    <fontDescription key="fontDescription" name="AvenirLTStd-Roman" family="Avenir LT Std" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="7h2-YM-SMK" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="0qF-we-OWa"/>
+                <constraint firstItem="fi9-sM-lrG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="9y9-ws-SOl"/>
+                <constraint firstItem="fi9-sM-lrG" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" constant="-5" id="LDh-F8-hOi"/>
+                <constraint firstAttribute="trailing" secondItem="7h2-YM-SMK" secondAttribute="trailing" id="SWk-Oq-3d0"/>
+                <constraint firstItem="7h2-YM-SMK" firstAttribute="top" secondItem="fi9-sM-lrG" secondAttribute="bottom" constant="-10" id="fPI-jS-a44"/>
+                <constraint firstItem="fi9-sM-lrG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="iir-Or-9hB"/>
+                <constraint firstItem="7h2-YM-SMK" firstAttribute="leading" secondItem="fi9-sM-lrG" secondAttribute="leading" constant="1" id="z6w-Rg-EpX"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="ViewlikeComment" destination="7h2-YM-SMK" id="fmN-pX-9Qb"/>
+                <outlet property="btnComments" destination="izE-3P-chS" id="PG4-TB-3tN"/>
+                <outlet property="btnLike" destination="TCR-bF-mly" id="G5I-IE-8pE"/>
+                <outlet property="lblComments" destination="zJc-Ka-1he" id="dgH-R8-MKe"/>
+                <outlet property="lblDescription" destination="fi9-sM-lrG" id="Slw-ju-QGl"/>
+                <outlet property="lblLikes" destination="ajJ-bz-jRN" id="lKr-o6-REs"/>
+            </connections>
+            <point key="canvasLocation" x="292" y="494"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="commentIcon" width="25" height="24"/>
+        <image name="like1" width="22" height="21"/>
+    </resources>
+</document>
