@@ -936,7 +936,7 @@ static const CGFloat kMinImageScale = 1.0f;
     
     
     _TopHeader = [[UIView alloc]initWithFrame:CGRectMake(0,0,windowBounds.size.width,64)];
-    _TopHeader.backgroundColor = AmHappyColor;
+    _TopHeader.backgroundColor = [UIColor colorWithRed:44/255.0f green:44/255.0f blue:44/255.0f alpha:1];//AmHappyColor;
     
  
     _doneButton.frame = CGRectMake(0,26, 50.0f, 25.0f);

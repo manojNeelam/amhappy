@@ -75,4 +75,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblEventName;
 @property (weak, nonatomic) IBOutlet UILabel *lblDescription;
 @property (weak, nonatomic) IBOutlet UILabel *lblAmount;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cons_IMgBG_Height;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cons_Tableview_Height;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cons_Public_Height;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cons_Private_Height;
 @end

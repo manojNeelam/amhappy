@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F1712" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="AvenirLTStd-Heavy.otf">
             <string>AvenirLTStd-Heavy</string>
             <string>AvenirLTStd-Heavy</string>
             <string>AvenirLTStd-Heavy</string>
-        </mutableArray>
-        <mutableArray key="AvenirLTStd-Medium.otf">
-            <string>AvenirLTStd-Medium</string>
+            <string>AvenirLTStd-Heavy</string>
         </mutableArray>
         <mutableArray key="AvenirLTStd-Roman.otf">
             <string>AvenirLTStd-Roman</string>
@@ -53,12 +52,13 @@
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Emk-eB-miV">
                             <rect key="frame" x="22" y="126" width="276" height="35"/>
+                            <color key="backgroundColor" red="0.2196078431372549" green="0.30196078431372547" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="nyh-G1-9DS"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="AvenirLTStd-Heavy" family="Avenir LT Std" pointSize="15"/>
-                            <inset key="imageEdgeInsets" minX="-70" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" backgroundImage="fb_updated">
+                            <inset key="imageEdgeInsets" minX="-90" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="Sign in with Facebook">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -67,12 +67,13 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFV-mx-HSu">
                             <rect key="frame" x="22" y="176" width="276" height="35"/>
+                            <color key="backgroundColor" red="0.12941176470588237" green="0.62745098039215685" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="TqM-g7-4fm"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="AvenirLTStd-Heavy" family="Avenir LT Std" pointSize="15"/>
-                            <inset key="imageEdgeInsets" minX="-95" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" backgroundImage="twitter_updated">
+                            <inset key="imageEdgeInsets" minX="-100" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="Sign in with Twitter">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -85,9 +86,9 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="CsG-es-JU5"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="AvenirLTStd-Medium" family="Avenir LT Std" pointSize="13"/>
-                            <inset key="imageEdgeInsets" minX="-115" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="Sign in with Google" image="facebook">
+                            <fontDescription key="fontDescription" name="AvenirLTStd-Heavy" family="Avenir LT Std" pointSize="15"/>
+                            <inset key="imageEdgeInsets" minX="-60" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="Sign in with Google" image="googleF">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -214,14 +215,31 @@
                                 <constraint firstAttribute="width" constant="200" id="mXG-M5-FCW"/>
                             </constraints>
                         </view>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="bFC-dB-qPo">
+                            <rect key="frame" x="27" y="133" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="C2m-Dd-gdY"/>
+                                <constraint firstAttribute="width" constant="20" id="E0M-ka-vmS"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter" translatesAutoresizingMaskIntoConstraints="NO" id="1Vw-Tg-qIm">
+                            <rect key="frame" x="32" y="184" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="2xn-Nz-MwO"/>
+                                <constraint firstAttribute="height" constant="20" id="8Qb-yu-dCG"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="1Vw-Tg-qIm" firstAttribute="top" secondItem="Emk-eB-miV" secondAttribute="bottom" constant="23" id="2C1-wE-S31"/>
                         <constraint firstAttribute="trailing" secondItem="XXX-c2-PlE" secondAttribute="trailing" constant="22" id="2Ys-ww-K4n"/>
                         <constraint firstItem="XXX-c2-PlE" firstAttribute="top" secondItem="HTU-t9-6pI" secondAttribute="bottom" constant="40" id="3P1-s8-vzR"/>
+                        <constraint firstItem="bFC-dB-qPo" firstAttribute="leading" secondItem="qkL-6o-Ijm" secondAttribute="leading" constant="27" id="4y1-23-FwV"/>
                         <constraint firstItem="XXX-c2-PlE" firstAttribute="leading" secondItem="qkL-6o-Ijm" secondAttribute="leading" constant="22" id="69c-NW-gbO"/>
                         <constraint firstAttribute="trailing" secondItem="UiQ-wP-Qlc" secondAttribute="trailing" constant="22" id="6gz-KP-bxB"/>
                         <constraint firstAttribute="trailing" secondItem="cj0-yt-PPM" secondAttribute="trailing" constant="22" id="7wi-JL-ezW"/>
+                        <constraint firstItem="1Vw-Tg-qIm" firstAttribute="leading" secondItem="qkL-6o-Ijm" secondAttribute="leading" constant="32" id="9Se-Hl-27u"/>
                         <constraint firstItem="QFV-mx-HSu" firstAttribute="top" secondItem="Emk-eB-miV" secondAttribute="bottom" constant="15" id="9YM-5B-Weq"/>
                         <constraint firstItem="Emk-eB-miV" firstAttribute="top" secondItem="lpR-CQ-f2d" secondAttribute="bottom" constant="42" id="ATH-Qs-4dz"/>
                         <constraint firstAttribute="trailing" secondItem="m4A-Hh-hDx" secondAttribute="trailing" constant="21" id="CRt-lh-tV8"/>
@@ -244,6 +262,7 @@
                         <constraint firstItem="QFV-mx-HSu" firstAttribute="leading" secondItem="qkL-6o-Ijm" secondAttribute="leading" constant="22" id="fH4-ez-D8C"/>
                         <constraint firstItem="lpR-CQ-f2d" firstAttribute="centerX" secondItem="Emk-eB-miV" secondAttribute="centerX" id="lxk-kP-pqq"/>
                         <constraint firstItem="HTU-t9-6pI" firstAttribute="centerX" secondItem="qkL-6o-Ijm" secondAttribute="centerX" id="rLc-nZ-ypI"/>
+                        <constraint firstItem="bFC-dB-qPo" firstAttribute="top" secondItem="qkL-6o-Ijm" secondAttribute="top" constant="133" id="weL-Fn-jDY"/>
                         <constraint firstItem="cj0-yt-PPM" firstAttribute="top" secondItem="QFV-mx-HSu" secondAttribute="bottom" constant="15" id="xER-hi-mBs"/>
                         <constraint firstItem="HTU-t9-6pI" firstAttribute="top" secondItem="cj0-yt-PPM" secondAttribute="bottom" constant="40" id="xxJ-GU-gdR"/>
                         <constraint firstItem="lpR-CQ-f2d" firstAttribute="centerX" secondItem="qkL-6o-Ijm" secondAttribute="centerX" id="zSj-5W-pL1"/>
@@ -263,19 +282,14 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="241" y="448.5"/>
+            <point key="canvasLocation" x="165" y="408.5"/>
         </view>
     </objects>
     <resources>
         <image name="bg" width="320" height="568"/>
         <image name="facebook" width="21" height="20"/>
-        <image name="fb_updated" width="280" height="35"/>
+        <image name="googleF" width="16" height="15"/>
         <image name="logo" width="157" height="36"/>
-        <image name="twitter_updated" width="282" height="35"/>
+        <image name="twitter" width="21" height="20"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

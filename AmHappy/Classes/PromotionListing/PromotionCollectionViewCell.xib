@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F1712" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="AvenirLTStd-Heavy.otf">
@@ -31,13 +32,13 @@
                         <rect key="frame" x="0.0" y="109" width="160" height="75"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98y-7N-nm8">
-                                <rect key="frame" x="0.0" y="23" width="158" height="18"/>
+                                <rect key="frame" x="5" y="23" width="153" height="18"/>
                                 <fontDescription key="fontDescription" name="AvenirLTStd-Light" family="Avenir LT Std" pointSize="13"/>
                                 <color key="textColor" red="0.94709181750000004" green="0.41899986449999999" blue="0.017010753930000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label Label Label Label Label Label Label Label Label Label Label Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9U-mz-P1b">
-                                <rect key="frame" x="0.0" y="46" width="158" height="29"/>
+                                <rect key="frame" x="5" y="46" width="153" height="29"/>
                                 <fontDescription key="fontDescription" name="AvenirLTStd-Light" family="Avenir LT Std" pointSize="13"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -46,9 +47,9 @@
                                 <rect key="frame" x="103" y="8" width="5" height="5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sx9-ZD-BLR">
-                                <rect key="frame" x="0.0" y="0.0" width="95" height="18"/>
+                                <rect key="frame" x="5" y="0.0" width="90" height="18"/>
                                 <fontDescription key="fontDescription" name="AvenirLTStd-Heavy" family="Avenir LT Std" pointSize="13"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12.5 KM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukA-Tn-GTT">
@@ -123,7 +124,7 @@
                 <outlet property="lblPriceWidth" destination="k6J-2W-T44" id="Ko0-gN-MT9"/>
                 <outlet property="lblType" destination="98y-7N-nm8" id="Y6t-Gj-CgR"/>
             </connections>
-            <point key="canvasLocation" x="215" y="305"/>
+            <point key="canvasLocation" x="198" y="236"/>
         </collectionViewCell>
     </objects>
     <resources>

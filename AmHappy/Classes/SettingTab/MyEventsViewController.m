@@ -169,13 +169,16 @@
     isLastExpire =NO;
     startExpire =0;
 }
+
 -(void)donePressed
 {
     [self.view endEditing:YES];
     if([[self.txtSearch.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length]==0)
     {
         [self.tableAuto setHidden:YES];
-    }}
+    }
+}
+
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     CGPoint location = [[touches anyObject] locationInView:self.view];
@@ -598,6 +601,43 @@
   
    
 }
+
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if([[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length]==0)
+    {
+        isSearching =NO;
+        searchStart=0;
+        [self.tableAuto setHidden:YES];
+        [self.tableview reloadData];
+        [self.tableview setUserInteractionEnabled:YES];
+    }
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self.tableview setUserInteractionEnabled:NO];
+}
+
+-(bool)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)searchText
+{
+    isSearching = YES;
+    if(!self.isInvite)
+    {
+        if([[searchText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length]>=3)
+        {
+            if([searchText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length%3==0)
+            {
+                searchStart=0;
+                [self callApi];
+            }
+        }
+        
+    }
+    
+    return YES;
+}
+
 - (void) searchBarTextDidBeginEditing:(UISearchBar *)theSearchBar
 {
     // isSearching = YES;
@@ -619,9 +659,9 @@
         }
         
     }
-    
-    
 }
+
+
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     [self.view endEditing:YES];
@@ -1017,6 +1057,7 @@
     NSString *formattedDate = [dateFormatter stringFromDate:date];
     return [NSString stringWithFormat:@"%@",formattedDate];
 }
+
 -(void)hideTable
 {
     if(self.tableAuto.hidden==NO)
@@ -1103,10 +1144,12 @@
     
     isExpired = NO;
     
-    [self.btnUpcoming setBackgroundColor:tabSelectedColor];
-    [self.btnExpired setBackgroundColor:tabunSelectedColor];
-    
+    //[self.btnUpcoming setBackgroundColor:tabSelectedColor];
+    //[self.btnExpired setBackgroundColor:tabunSelectedColor];
 
+    [self.lblUpcoming setBackgroundColor:[UIColor colorWithRed:242/255.0f green:107/255.0f blue:4/255.0f alpha:1.0f]];
+    [self.lblExpired setBackgroundColor:[[UIColor darkGrayColor] colorWithAlphaComponent:0.7]];
+    
     [self.tableview reloadData];
     
 }
@@ -1114,8 +1157,11 @@
 {
     isExpired = YES;
     
-    [self.btnExpired setBackgroundColor:tabSelectedColor];
-    [self.btnUpcoming setBackgroundColor:tabunSelectedColor];
+    [self.lblExpired setBackgroundColor:[UIColor colorWithRed:242/255.0f green:107/255.0f blue:4/255.0f alpha:1.0f]];
+    [self.lblUpcoming setBackgroundColor:[[UIColor darkGrayColor] colorWithAlphaComponent:0.7]];
+    
+    //[self.btnExpired setBackgroundColor:tabSelectedColor];
+    //[self.btnUpcoming setBackgroundColor:tabunSelectedColor];
     
     [self.tableview reloadData];
 }

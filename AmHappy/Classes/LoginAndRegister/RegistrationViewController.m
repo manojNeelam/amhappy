@@ -1186,10 +1186,13 @@
         if(isEdit)
         {
             [USER_DEFAULTS setValue:[[results valueForKey:@"User"] valueForKey:@"userid"] forKey:@"userid"];
-           
+            [USER_DEFAULTS setObject:self.txtEmail.text forKey:@"email_address"];
             [USER_DEFAULTS setValue:[[results valueForKey:@"User"] valueForKey:@"fullname"] forKey:@"fullname"];
             [USER_DEFAULTS setValue:[[results valueForKey:@"User"] valueForKey:@"language"] forKey:@"language"];
             [USER_DEFAULTS setValue:[[results valueForKey:@"User"] valueForKey:@"recieve_push"] forKey:@"recieve_push"];
+            
+            
+            
             [USER_DEFAULTS setObject:[[results valueForKey:@"User"] valueForKey:@"language"] forKey:@"localization"];
             
             [USER_DEFAULTS setValue:[[results valueForKey:@"User"] valueForKey:@"comment_notification"] forKey:@"comment_notification"];

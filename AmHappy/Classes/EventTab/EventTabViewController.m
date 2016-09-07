@@ -48,6 +48,7 @@
     NSString *country;
     NSString *address;
 
+    __weak IBOutlet UIView *baseImgView;
     UIToolbar *mytoolbar2;
   
     double time;
@@ -94,6 +95,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    baseImgView.layer.cornerRadius = 20.0f;
+    [baseImgView setClipsToBounds:YES];
     
     self.txtDesc2.autocapitalizationType = UITextAutocapitalizationTypeSentences;
     self.txtDescription.autocapitalizationType = UITextAutocapitalizationTypeSentences;
@@ -1600,6 +1604,7 @@
 {
     return 40;
 }
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     
@@ -1618,15 +1623,16 @@
         [title setText:[localization localizedStringForKey:@"Location"]];
         
     }
-    [headerView setBackgroundColor:[UIColor colorWithRed:(228/255.f) green:(123/255.f) blue:(0/255.f) alpha:1.0f]];
+    [headerView setBackgroundColor:[[UIColor darkGrayColor] colorWithAlphaComponent:0.7]];
     [title setTextColor:[UIColor whiteColor]];
-    [title setTextAlignment:NSTextAlignmentCenter];
+    [title setTextAlignment:NSTextAlignmentLeft];
     
     [headerView addSubview:title];
     
     return headerView;
     
 }
+
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
    
@@ -1638,6 +1644,7 @@
     UIView *headerView = [[UIView alloc]
                           initWithFrame:CGRectMake(0,0,self.view.frame.size.width, 80)];
     
+    [headerView setBackgroundColor:[UIColor clearColor]];
     
     UILabel *title =[[UILabel alloc] init];
     
@@ -1682,7 +1689,6 @@
         }
         
     }
-    [headerView setBackgroundColor:[UIColor whiteColor]];
     [title setTextColor:[UIColor colorWithRed:(228/255.f) green:(123/255.f) blue:(0/255.f) alpha:1.0f]];
     [title setTextAlignment:NSTextAlignmentCenter];
     [title setFont:FONT_Regular(12.0)];
@@ -1721,12 +1727,15 @@
 {
     if(indexPath.section==0)
     {
-        DateCell *cell = (DateCell *)[tableView dequeueReusableCellWithIdentifier:nil];
+        DateCell *cell = (DateCell *)[tableView dequeueReusableCellWithIdentifier:@"DateCell"];
         if (cell == nil)
         {
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DateCell" owner:self options:nil];
             cell=[nib objectAtIndex:0] ;
         }
+        [cell setBackgroundColor:[UIColor colorWithRed:233/255.0f green:235/255.0f blue:240/255.0f alpha:1.0]];
+        
+        
         cell.delegate=self;
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         cell.lblCellTitle.text =[NSString stringWithFormat:@"%@ %d",[localization localizedStringForKey:@"Date & Time"],(int)indexPath.row+1];
@@ -1760,20 +1769,21 @@
     }
     else
     {
-        LocationCell2 *cell = (LocationCell2 *)[tableView dequeueReusableCellWithIdentifier:nil];
+        LocationCell2 *cell = (LocationCell2 *)[tableView dequeueReusableCellWithIdentifier:@"LocationCell2"];
         if (cell == nil)
         {
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"LocationCell2" owner:self options:nil];
             cell=[nib objectAtIndex:0] ;
         }
         cell.delegate=self;
-               
         
-        [cell.lblLocation setText:[localization localizedStringForKey:@"Location"]];
+        [cell setBackgroundColor:[UIColor colorWithRed:233/255.0f green:235/255.0f blue:240/255.0f alpha:1.0]];
         
-        cell.btnLocation.layer.borderWidth = 0.5;
-        cell.btnLocation.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-        cell.btnLocation.layer.cornerRadius = 5;//half of the width
+        [cell.lblLocation setText:[localization localizedStringForKey:@"Tap to add Location"]];
+        
+        //cell.btnLocation.layer.borderWidth = 0.5;
+        //cell.btnLocation.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+        //cell.btnLocation.layer.cornerRadius = 5;//half of the width
         
         
         cell.btnLocation.tag=indexPath.row;
@@ -2137,10 +2147,10 @@
     if (sender.isOn)
     {
         isPrivate=YES;
+        
         self.publicView.hidden=YES;
         self.privateView.hidden=NO;
         
-       
         if(![txtDesc2.text isEqualToString:[localization localizedStringForKey:@"Short Description or Message"]])
         {
             self.txtDesc2.textColor = [UIColor blackColor];
@@ -2149,10 +2159,6 @@
         {
             self.txtDescription.textColor = [UIColor blackColor];
         }
-        
-        
-        
-        
         
 
         if(IS_Ipad)
@@ -2470,24 +2476,30 @@
 }
 -(void)increaseHeight
 {
-    self.privateView.frame = CGRectMake(self.privateView.frame.origin.x, self.privateView.frame.origin.y, self.privateView.frame.size.width, self.privateView.frame.size.height+80);
     
-    NSLog(@"table frame is %@",NSStringFromCGRect(self.tableview.frame));
-     self.tableview.frame = CGRectMake(self.tableview.frame.origin.x, self.tableview.frame.origin.y, self.tableview.frame.size.width, self.tableview.frame.size.height+80);
+    self.cons_Private_Height.constant = self.cons_Private_Height.constant + 80;
+    self.cons_Tableview_Height.constant = self.cons_Tableview_Height.constant + 80;
+    self.cons_IMgBG_Height.constant = self.cons_IMgBG_Height.constant + 80;
     
-  //   self.btnAdd.frame = CGRectMake(self.btnAdd.frame.origin.x, self.btnAdd.frame.origin.y+142, self.btnAdd.frame.size.width, self.btnAdd.frame.size.height);
     
-     self.imgVotingDate.frame = CGRectMake(self.imgVotingDate.frame.origin.x, self.imgVotingDate.frame.origin.y+80, self.imgVotingDate.frame.size.width, self.imgVotingDate.frame.size.height);
-    
-     self.imgVoteCal.frame = CGRectMake(self.imgVoteCal.frame.origin.x, self.imgVoteCal.frame.origin.y+80, self.imgVoteCal.frame.size.width, self.imgVoteCal.frame.size.height);
-    
-     self.txtEnd2.frame = CGRectMake(self.txtEnd2.frame.origin.x, self.txtEnd2.frame.origin.y+80, self.txtEnd2.frame.size.width, self.txtEnd2.frame.size.height);
-    
-     self.btnSubmit2.frame = CGRectMake(self.btnSubmit2.frame.origin.x, self.btnSubmit2.frame.origin.y+80, self.btnSubmit2.frame.size.width, self.btnSubmit2.frame.size.height);
-    
-   //  self.lblEndDate2.frame = CGRectMake(self.lblEndDate2.frame.origin.x, self.lblEndDate2.frame.origin.y+142, self.lblEndDate2.frame.size.width, self.lblEndDate2.frame.size.height);
-    
-    self.imgBG.frame = CGRectMake(self.imgBG.frame.origin.x, self.imgBG.frame.origin.y, self.imgBG.frame.size.width, self.imgBG.frame.size.height+80);
+//    self.privateView.frame = CGRectMake(self.privateView.frame.origin.x, self.privateView.frame.origin.y, self.privateView.frame.size.width, self.privateView.frame.size.height+80);
+//    
+//    NSLog(@"table frame is %@",NSStringFromCGRect(self.tableview.frame));
+//     self.tableview.frame = CGRectMake(self.tableview.frame.origin.x, self.tableview.frame.origin.y, self.tableview.frame.size.width, self.tableview.frame.size.height+80);
+//    
+//  //   self.btnAdd.frame = CGRectMake(self.btnAdd.frame.origin.x, self.btnAdd.frame.origin.y+142, self.btnAdd.frame.size.width, self.btnAdd.frame.size.height);
+//    
+//     self.imgVotingDate.frame = CGRectMake(self.imgVotingDate.frame.origin.x, self.imgVotingDate.frame.origin.y+80, self.imgVotingDate.frame.size.width, self.imgVotingDate.frame.size.height);
+//    
+//     self.imgVoteCal.frame = CGRectMake(self.imgVoteCal.frame.origin.x, self.imgVoteCal.frame.origin.y+80, self.imgVoteCal.frame.size.width, self.imgVoteCal.frame.size.height);
+//    
+//     self.txtEnd2.frame = CGRectMake(self.txtEnd2.frame.origin.x, self.txtEnd2.frame.origin.y+80, self.txtEnd2.frame.size.width, self.txtEnd2.frame.size.height);
+//    
+//     self.btnSubmit2.frame = CGRectMake(self.btnSubmit2.frame.origin.x, self.btnSubmit2.frame.origin.y+80, self.btnSubmit2.frame.size.width, self.btnSubmit2.frame.size.height);
+//    
+//   //  self.lblEndDate2.frame = CGRectMake(self.lblEndDate2.frame.origin.x, self.lblEndDate2.frame.origin.y+142, self.lblEndDate2.frame.size.width, self.lblEndDate2.frame.size.height);
+//    
+//    self.imgBG.frame = CGRectMake(self.imgBG.frame.origin.x, self.imgBG.frame.origin.y, self.imgBG.frame.size.width, self.imgBG.frame.size.height+80);
     
     if(IS_Ipad)
     {
@@ -2503,23 +2515,29 @@
 }
 -(void)descreaseHeight
 {
-    self.privateView.frame = CGRectMake(self.privateView.frame.origin.x, self.privateView.frame.origin.y, self.privateView.frame.size.width, self.privateView.frame.size.height-80);
     
-    self.tableview.frame = CGRectMake(self.tableview.frame.origin.x, self.tableview.frame.origin.y, self.tableview.frame.size.width, self.tableview.frame.size.height-80);
+    self.cons_Private_Height.constant = self.cons_Private_Height.constant - 80;
+    self.cons_Tableview_Height.constant = self.cons_Tableview_Height.constant - 80;
+    self.cons_IMgBG_Height.constant = self.cons_IMgBG_Height.constant - 80;
     
-   // self.btnAdd.frame = CGRectMake(self.btnAdd.frame.origin.x, self.btnAdd.frame.origin.y-142, self.btnAdd.frame.size.width, self.btnAdd.frame.size.height);
     
-    self.imgVotingDate.frame = CGRectMake(self.imgVotingDate.frame.origin.x, self.imgVotingDate.frame.origin.y-80, self.imgVotingDate.frame.size.width, self.imgVotingDate.frame.size.height);
-    
-    self.imgVoteCal.frame = CGRectMake(self.imgVoteCal.frame.origin.x, self.imgVoteCal.frame.origin.y-80, self.imgVoteCal.frame.size.width, self.imgVoteCal.frame.size.height);
-    
-    self.txtEnd2.frame = CGRectMake(self.txtEnd2.frame.origin.x, self.txtEnd2.frame.origin.y-80, self.txtEnd2.frame.size.width, self.txtEnd2.frame.size.height);
-    
-    self.btnSubmit2.frame = CGRectMake(self.btnSubmit2.frame.origin.x, self.btnSubmit2.frame.origin.y-80, self.btnSubmit2.frame.size.width, self.btnSubmit2.frame.size.height);
-    
-   // self.lblEndDate2.frame = CGRectMake(self.lblEndDate2.frame.origin.x, self.lblEndDate2.frame.origin.y-142, self.lblEndDate2.frame.size.width, self.lblEndDate2.frame.size.height);
-    
-     self.imgBG.frame = CGRectMake(self.imgBG.frame.origin.x, self.imgBG.frame.origin.y, self.imgBG.frame.size.width, self.imgBG.frame.size.height-80);
+//    self.privateView.frame = CGRectMake(self.privateView.frame.origin.x, self.privateView.frame.origin.y, self.privateView.frame.size.width, self.privateView.frame.size.height-80);
+//    
+//    self.tableview.frame = CGRectMake(self.tableview.frame.origin.x, self.tableview.frame.origin.y, self.tableview.frame.size.width, self.tableview.frame.size.height-80);
+//    
+//   // self.btnAdd.frame = CGRectMake(self.btnAdd.frame.origin.x, self.btnAdd.frame.origin.y-142, self.btnAdd.frame.size.width, self.btnAdd.frame.size.height);
+//    
+//    self.imgVotingDate.frame = CGRectMake(self.imgVotingDate.frame.origin.x, self.imgVotingDate.frame.origin.y-80, self.imgVotingDate.frame.size.width, self.imgVotingDate.frame.size.height);
+//    
+//    self.imgVoteCal.frame = CGRectMake(self.imgVoteCal.frame.origin.x, self.imgVoteCal.frame.origin.y-80, self.imgVoteCal.frame.size.width, self.imgVoteCal.frame.size.height);
+//    
+//    self.txtEnd2.frame = CGRectMake(self.txtEnd2.frame.origin.x, self.txtEnd2.frame.origin.y-80, self.txtEnd2.frame.size.width, self.txtEnd2.frame.size.height);
+//    
+//    self.btnSubmit2.frame = CGRectMake(self.btnSubmit2.frame.origin.x, self.btnSubmit2.frame.origin.y-80, self.btnSubmit2.frame.size.width, self.btnSubmit2.frame.size.height);
+//    
+//   // self.lblEndDate2.frame = CGRectMake(self.lblEndDate2.frame.origin.x, self.lblEndDate2.frame.origin.y-142, self.lblEndDate2.frame.size.width, self.lblEndDate2.frame.size.height);
+//    
+//     self.imgBG.frame = CGRectMake(self.imgBG.frame.origin.x, self.imgBG.frame.origin.y, self.imgBG.frame.size.width, self.imgBG.frame.size.height-80);
     
     
     if(IS_Ipad)

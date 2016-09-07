@@ -479,6 +479,7 @@
 		8CAAB3281D5CA07C00D37BDA /* RGSPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAAB3261D5CA07C00D37BDA /* RGSPreviewView.m */; };
 		8CAAB3311D5CB96300D37BDA /* PrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAAB32F1D5CB96300D37BDA /* PrivacyPolicyViewController.m */; };
 		8CAAB3321D5CB96300D37BDA /* PrivacyPolicyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CAAB3301D5CB96300D37BDA /* PrivacyPolicyViewController.xib */; };
+		8CC7857C1D7C2C1500F882CC /* AttrbuteString.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC7857B1D7C2C1500F882CC /* AttrbuteString.m */; };
 		8CE0CB231D4A108200213BA9 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE0CB201D4A108200213BA9 /* GoogleOpenSource.framework */; };
 		8CE0CB241D4A108200213BA9 /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8CE0CB211D4A108200213BA9 /* GooglePlus.bundle */; };
 		8CE0CB251D4A108200213BA9 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE0CB221D4A108200213BA9 /* GooglePlus.framework */; };
@@ -1318,6 +1319,8 @@
 		8CAAB32E1D5CB96300D37BDA /* PrivacyPolicyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyPolicyViewController.h; sourceTree = "<group>"; };
 		8CAAB32F1D5CB96300D37BDA /* PrivacyPolicyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyPolicyViewController.m; sourceTree = "<group>"; };
 		8CAAB3301D5CB96300D37BDA /* PrivacyPolicyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrivacyPolicyViewController.xib; sourceTree = "<group>"; };
+		8CC7857A1D7C2C1500F882CC /* AttrbuteString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttrbuteString.h; sourceTree = "<group>"; };
+		8CC7857B1D7C2C1500F882CC /* AttrbuteString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttrbuteString.m; sourceTree = "<group>"; };
 		8CE0CB201D4A108200213BA9 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleOpenSource.framework; sourceTree = "<group>"; };
 		8CE0CB211D4A108200213BA9 /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GooglePlus.bundle; sourceTree = "<group>"; };
 		8CE0CB221D4A108200213BA9 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
@@ -3275,6 +3278,8 @@
 				8CFA7C3A1D4A46470067DC70 /* AppTextField.m */,
 				8C074DA21D685DCA0047744F /* SearchTextField.h */,
 				8C074DA31D685DCA0047744F /* SearchTextField.m */,
+				8CC7857A1D7C2C1500F882CC /* AttrbuteString.h */,
+				8CC7857B1D7C2C1500F882CC /* AttrbuteString.m */,
 			);
 			name = SubClass;
 			sourceTree = "<group>";
@@ -3329,7 +3334,6 @@
 				TargetAttributes = {
 					5EA8A4451A82428C00AD33D7 = {
 						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = E86VYC3KEG;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -3544,6 +3548,7 @@
 				5E3A92F11AB30B3F00C0716A /* XMPPIQ+JabberRPCResonse.m in Sources */,
 				5EAB7F9C1A85FC27004E3141 /* CategoryViewController.m in Sources */,
 				5E3A93471AB30B3F00C0716A /* NSString+DDXML.m in Sources */,
+				8CC7857C1D7C2C1500F882CC /* AttrbuteString.m in Sources */,
 				29FC3F0B1C9974AE0069D9B5 /* ELCConsole.m in Sources */,
 				5E3A92DC1AB30B3F00C0716A /* XMPPMessage.m in Sources */,
 				5EA8A4FF1A8244E300AD33D7 /* SDWebImagePrefetcher.m in Sources */,
@@ -3859,8 +3864,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Pablo Carretero Sanchez (E86VYC3KEG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Pablo Carretero Sanchez (E86VYC3KEG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -3886,7 +3891,7 @@
 					"-ObjC",
 					"$(inherited)",
 				);
-				PROVISIONING_PROFILE = "edb6cb1c-cf33-44f7-98f7-a606aa5314f0";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -3911,8 +3916,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Pablo Carretero Sanchez (E86VYC3KEG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Pablo Carretero Sanchez (E86VYC3KEG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -3932,7 +3937,7 @@
 					"-ObjC",
 					"$(inherited)",
 				);
-				PROVISIONING_PROFILE = "edb6cb1c-cf33-44f7-98f7-a606aa5314f0";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -3946,8 +3951,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Pablo Carretero Sanchez (E86VYC3KEG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Pablo Carretero Sanchez (E86VYC3KEG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -3969,8 +3974,9 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.syntel.pusherapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "edb6cb1c-cf33-44f7-98f7-a606aa5314f0";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s";
@@ -3983,8 +3989,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Pablo Carretero Sanchez (E86VYC3KEG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Pablo Carretero Sanchez (E86VYC3KEG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -4006,8 +4012,9 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.syntel.pusherapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "edb6cb1c-cf33-44f7-98f7-a606aa5314f0";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};

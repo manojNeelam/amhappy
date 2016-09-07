@@ -140,15 +140,15 @@
         NSLog(@"Cannot set placeholder text's color, because deployment target is earlier than iOS 6.0");
     }
     
-   // [self.txtUser setPlaceholder:[localization localizedStringForKey:@"Email"]];
-    //[self.txtPasswd setPlaceholder:[localization localizedStringForKey:@"Password"]];
+    [self.txtUser setPlaceholder:[localization localizedStringForKey:@"Email"]];
+    [self.txtPasswd setPlaceholder:[localization localizedStringForKey:@"Password"]];
 
     [self.btnForget setTitle:[localization localizedStringForKey:@"Forgot Password?"] forState:UIControlStateNormal];
     [self.btnGo setTitle:[localization localizedStringForKey:@"Sign In"] forState:UIControlStateNormal];
     [self.btnRegister setTitle:[localization localizedStringForKey:@"Sign Up"] forState:UIControlStateNormal];
-   /* [self.btnForget.titleLabel adjustsFontSizeToFitWidth];
+    [self.btnForget.titleLabel adjustsFontSizeToFitWidth];
     [self.btnForget.titleLabel setMinimumScaleFactor:0.5];
-    [self.btnForget.titleLabel setNumberOfLines:1.0];*/
+    [self.btnForget.titleLabel setNumberOfLines:1.0];
     [self.btnForget.titleLabel sizeToFit];
     
     
@@ -697,7 +697,7 @@
       NSLog(@"result is %@",results);
     if ([[NSString stringWithFormat:@"%@",[results valueForKey:@"code"]] isEqualToString:@"200"])
     {
-       
+        [USER_DEFAULTS setObject:self.txtUser.text forKey:@"email_address"];
         [USER_DEFAULTS setValue:[[results valueForKey:@"User"] valueForKey:@"userid"] forKey:@"userid"];
         [USER_DEFAULTS setValue:[[results valueForKey:@"User"] valueForKey:@"jid"] forKey:@"myjid"];
         [USER_DEFAULTS setValue:@"yes" forKey:@"updated"];

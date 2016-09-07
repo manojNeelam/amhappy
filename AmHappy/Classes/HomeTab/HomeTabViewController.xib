@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -65,7 +65,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.17254901960784313" green="0.17254901960784313" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="rMl-4R-tFr" secondAttribute="trailing" constant="20" id="3yb-tY-JjC"/>
                         <constraint firstItem="bPG-7y-jen" firstAttribute="top" secondItem="nbk-27-jQv" secondAttribute="top" constant="34" id="CEl-1I-TnC"/>
@@ -96,8 +96,8 @@
                         <action selector="myLocationTapped:" destination="-1" eventType="touchUpInside" id="s04-jY-7zu"/>
                     </connections>
                 </button>
-                <imageView alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bLl-Wc-Qxr">
-                    <rect key="frame" x="0.0" y="-1500" width="320" height="460"/>
+                <imageView alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bLl-Wc-Qxr">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                 </imageView>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="203-LI-XYE">

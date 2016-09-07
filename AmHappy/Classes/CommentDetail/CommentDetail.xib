@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -41,7 +41,6 @@
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="VAI-uk-WsG">
                     <rect key="frame" x="0.0" y="64" width="320" height="366"/>
-                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                     <connections>
@@ -54,7 +53,6 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4w7-Mm-BWB" userLabel="btnBack">
                             <rect key="frame" x="0.0" y="25" width="35" height="28"/>
-                            <animations/>
                             <state key="normal" image="back">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -62,16 +60,14 @@
                                 <action selector="clickBack:" destination="-1" eventType="touchUpInside" id="C1G-5l-wGq"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Replies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMO-F5-bdj" userLabel="lblAddPromotions">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Replies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMO-F5-bdj" userLabel="lblAddPromotions">
                             <rect key="frame" x="45" y="32" width="230" height="16"/>
-                            <animations/>
                             <fontDescription key="fontDescription" name="AvenirLTStd-Roman" family="Avenir LT Std" pointSize="16"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <animations/>
-                    <color key="backgroundColor" red="0.89411764709999997" green="0.4823529412" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.17254901960784313" green="0.17254901960784313" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="4w7-Mm-BWB" firstAttribute="leading" secondItem="36G-jJ-MWt" secondAttribute="leading" id="3KX-WP-jMa"/>
                         <constraint firstAttribute="trailing" secondItem="BMO-F5-bdj" secondAttribute="trailing" constant="45" id="8Wn-6g-6Wo"/>
@@ -89,7 +85,6 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NK6-5n-L5H" userLabel="BtnSend">
                             <rect key="frame" x="265" y="0.0" width="55" height="50"/>
-                            <animations/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="XpR-Mb-WGE"/>
@@ -104,7 +99,6 @@
                         </button>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write a comment..." translatesAutoresizingMaskIntoConstraints="NO" id="DPg-Fn-ZIc" userLabel="txtViewComment">
                             <rect key="frame" x="55" y="5" width="170" height="40"/>
-                            <animations/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" name="AvenirLTStd-Roman" family="Avenir LT Std" pointSize="14"/>
@@ -115,7 +109,6 @@
                         </textView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOO-gJ-Aw1" userLabel="btnCamera">
                             <rect key="frame" x="225" y="0.0" width="40" height="50"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="gqc-gw-dYY"/>
                             </constraints>
@@ -131,11 +124,9 @@
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1d9-nr-UTv" userLabel="imgComment">
                                     <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                    <animations/>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNL-4O-UQC" userLabel="btnCancel">
                                     <rect key="frame" x="20" y="0.0" width="20" height="20"/>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="20" id="aut-6u-UmJ"/>
                                         <constraint firstAttribute="height" constant="20" id="gsn-7b-EE0"/>
@@ -149,7 +140,6 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="tNL-4O-UQC" firstAttribute="top" secondItem="IBD-s3-Fwt" secondAttribute="top" id="4Bx-0h-K7F"/>
@@ -163,7 +153,6 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <animations/>
                     <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="DPg-Fn-ZIc" firstAttribute="leading" secondItem="IBD-s3-Fwt" secondAttribute="trailing" constant="10" id="4dU-pj-Mks"/>
@@ -189,7 +178,6 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5jQ-xF-xiM" userLabel="btnClose">
                                     <rect key="frame" x="0.0" y="30" width="40" height="30"/>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="4Do-tI-8Xl"/>
                                         <constraint firstAttribute="width" constant="40" id="8SO-In-f3A"/>
@@ -203,7 +191,6 @@
                                 </button>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crosshair" translatesAutoresizingMaskIntoConstraints="NO" id="cLj-Ld-vUk">
                                     <rect key="frame" x="10" y="33" width="25" height="25"/>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="25" id="VCv-6I-frb"/>
                                         <constraint firstAttribute="height" constant="25" id="z9m-1Z-jQE"/>
@@ -211,7 +198,6 @@
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select user to Tag" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMf-Le-dPa">
                                     <rect key="frame" x="48" y="30" width="224" height="30"/>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="qaj-2C-Qtw"/>
                                     </constraints>
@@ -220,7 +206,6 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <animations/>
                             <color key="backgroundColor" red="0.89411764705882346" green="0.4823529411764706" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="cLj-Ld-vUk" firstAttribute="leading" secondItem="XUr-6l-veN" secondAttribute="leading" constant="10" id="4ze-gE-JPx"/>
@@ -235,7 +220,6 @@
                         </view>
                         <tableView clipsSubviews="YES" tag="100" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" style="plain" rowHeight="50" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="jpK-J5-Y1z" userLabel="tblUsers">
                             <rect key="frame" x="0.0" y="64" width="320" height="176"/>
-                            <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="separatorColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -246,14 +230,12 @@
                         </tableView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cR0-gO-79m">
                             <rect key="frame" x="0.0" y="238" width="320" height="1"/>
-                            <animations/>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="cww-Hl-y47"/>
                             </constraints>
                         </imageView>
                     </subviews>
-                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="jpK-J5-Y1z" firstAttribute="leading" secondItem="XUr-6l-veN" secondAttribute="leading" id="6ij-xi-iCU"/>
@@ -270,7 +252,6 @@
                     </constraints>
                 </view>
             </subviews>
-            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Unr-7x-wTA" secondAttribute="trailing" id="0iS-Ke-Fc0"/>
@@ -288,7 +269,7 @@
                 <constraint firstItem="VAI-uk-WsG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uYj-G1-f4l"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="745" y="131"/>
+            <point key="canvasLocation" x="639" y="98"/>
         </view>
     </objects>
     <resources>

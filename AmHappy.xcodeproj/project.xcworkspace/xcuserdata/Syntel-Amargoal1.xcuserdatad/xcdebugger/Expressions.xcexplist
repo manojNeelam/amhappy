@@ -3,6 +3,17 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[TimeLineViewController configureTimeLineCellComment:atIndexPath:]:TimeLineViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "timeLineArray">
+            </PersistentString>
+            <PersistentString
+               value = "lblCellTitle">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[HomeTabViewController responseDistanceChanged:]:HomeTabViewController.m">
          <PersistentStrings>
             <PersistentString

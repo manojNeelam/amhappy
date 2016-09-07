@@ -25,7 +25,7 @@ static UIColor *FRHyperLabelLinkColorHighlight;
 
 + (void)initialize {
 	if (self == [FRHyperLabel class]) {
-		FRHyperLabelLinkColorDefault = [UIColor blackColor];
+		FRHyperLabelLinkColorDefault = [UIColor colorWithRed:117/255.0f green:161/255.0f blue:48/255.0f alpha:1];
 		FRHyperLabelLinkColorHighlight = [UIColor blackColor];
 	}
 }

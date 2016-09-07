@@ -573,8 +573,13 @@
     {
         NSArray *arrNib=[[NSBundle mainBundle] loadNibNamed:cellIdentifre owner:self options:nil];
         cell= (PromotionCollectionViewCell *)[arrNib objectAtIndex:0];
+        
+       
    
     }
+    
+    cell.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    cell.layer.borderWidth = 1.0f;
     
     /*if ([[[Promotions objectAtIndex:indexPath.row] valueForKey:@"is_creater"]isEqualToString:@"N"])
     {
@@ -1178,14 +1183,9 @@
 
 - (IBAction)btnService:(id)sender
 {
-    
     productService = @"S";
-    
     [self selectService];
-    
-    
 }
-
 
 -(void)DeselectProductService
 {

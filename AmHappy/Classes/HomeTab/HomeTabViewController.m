@@ -1,4 +1,4 @@
-//
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        //
 //  HomeTabViewController.m
 //  AmHappy
 //
@@ -932,6 +932,7 @@
     [drk hide];
     // [self zoomToFitMapAnnotations:self.mapview];
 }
+
 -(void)zoomToFitMapAnnotations:(MKMapView *)mapview1 {
     if ([mapview1.annotations count] == 0) return;
     
@@ -1263,7 +1264,11 @@
 {
     // NSLog(@"ok2BtnTapped");
     [[self.view viewWithTag:123] removeFromSuperview];
-    
+    if(DELEGATE.connectedToNetwork)
+    {
+        [mc logout:[USER_DEFAULTS valueForKey:@"userid"] Sel:@selector(responsegetLogout:)];
+    }
+
 }
 -(void)cancelBtnTapped:(id)sender
 {
@@ -1333,9 +1338,18 @@
     [leftMenuView setLeftMenuDelegate:self];
     leftMenuView.backgroundColor = [UIColor clearColor];
     
+    
+    
+    NSString *userID = [USER_DEFAULTS objectForKey:@"email_address"];
+    NSString *fullName = [USER_DEFAULTS objectForKey:@"fullname"];
+    
+    [leftMenuView.lblName setText:fullName];
+    [leftMenuView.lblEmailAddress setText:userID];
+    
     tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismisMenuView:)];
+    [tap setDelegate:self];
     tap.cancelsTouchesInView = NO;
-    //[leftMenuView addGestureRecognizer:tap];
+    [leftMenuView addGestureRecognizer:tap];
     
     UIWindow* window = [UIApplication sharedApplication].keyWindow;
     if (!window)
@@ -1514,27 +1528,60 @@
             break;
         case 2:
         {
-            OtherUserEventsViewController *otherUserEventsVC = [[OtherUserEventsViewController alloc] initWithNibName:@"OtherUserEventsViewController" bundle:nil];
-            [self.navigationController pushViewController:otherUserEventsVC animated:YES];
-        }
+            UITabBarItem *item = [self.tabBarController.tabBar.items objectAtIndex:0];
+            
+            int count =[[item badgeValue] intValue];
+            
+            [item setBadgeValue:[NSString stringWithFormat:@"%d",count-inviteCount]];
+            
+            
+            //here
+            if([[item badgeValue] intValue] <= 0)
+            {
+                [item setBadgeValue:nil];
+            }
+            
+            //[self.filterView setHidden:YES];
+            isFilter =NO;
+            
+            
+            OtherUserEventsViewController *otherVC =[[OtherUserEventsViewController alloc] initWithNibName:@"OtherUserEventsViewController" bundle:nil];
+            [otherVC setIsMy:YES];
+            [self.navigationController pushViewController:otherVC animated:YES];
+        } 
             break;
             
         case 3:
         {
-            FriendRequestViewController *friendRequestVC = [[FriendRequestViewController alloc] initWithNibName:@"FriendRequestViewController" bundle:nil];
-            [self.navigationController pushViewController:friendRequestVC animated:YES];
+            FriendRequestViewController *frndVC = [[FriendRequestViewController alloc] initWithNibName:@"FriendRequestViewController" bundle:nil];
+            [frndVC setIsFriend:YES];
+            isFilter =NO;
+            [self.navigationController pushViewController:frndVC animated:YES];
         }
             break;
         case 4:
         {
-            CommonListViewController *commonListVC = [[CommonListViewController alloc] initWithNibName:@"CommonListViewController" bundle:nil];
+            MyEventsViewController *commonListVC = [[MyEventsViewController alloc] initWithNibName:@"MyEventsViewController" bundle:nil];
+            commonListVC.isInvite = NO;
+            [self.filterView setHidden:YES];
+            /*
+             MyEventsViewController *myVC =[[MyEventsViewController alloc] initWithNibName:@"MyEventsViewController" bundle:nil];
+             [myVC setIsInvite:NO];
+             [self.navigationController pushViewController:myVC animated:YES];
+             //[self.filterView setHidden:YES];
+             isFilter =NO;
+             */
             [self.navigationController pushViewController:commonListVC animated:YES];
         }
             break;
         case 5:
         {
-            CategoryViewController *friendRequestVC = [[CategoryViewController alloc] initWithNibName:@"CategoryViewController" bundle:nil];
-            [self.navigationController pushViewController:friendRequestVC animated:YES];
+            
+            CategoryViewController *catVC = [[CategoryViewController alloc] initWithNibName:@"CategoryViewController" bundle:nil];
+            [catVC setIsMultiSelect:YES];
+            isFilter =NO;
+            
+            [self.navigationController pushViewController:catVC animated:YES];
         }
             break;
         default:
@@ -2007,5 +2054,7 @@
     [self plotPositions:[[NSArray alloc] initWithObjects:dict, nil]];
     
 }
+
+
 
 @end

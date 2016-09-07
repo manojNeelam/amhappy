@@ -981,7 +981,7 @@
         
     }
     [btnDelete setImage:[UIImage imageNamed:@"deleteNewIcon.png"] forState:UIControlStateNormal];
-    [btnShare setImage:[UIImage imageNamed:@"shareNew1.png"] forState:UIControlStateNormal];
+    [btnShare setImage:[UIImage imageNamed:@"shareNew2.png"] forState:UIControlStateNormal];
     [btnComment setImage:[UIImage imageNamed:@"commentIcon.png"] forState:UIControlStateNormal];
     
     
@@ -1158,7 +1158,7 @@
     {
         nameString = [[NSMutableAttributedString alloc] initWithString:[[[timeLineArray objectAtIndex:indexPath.row] valueForKey:@"User"] valueForKey:@"name"] attributes: nameDict];
     }
-    [nameString addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:(NSMakeRange(0, nameString.length))];
+    [nameString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:228/255.0f green:123/255.0f blue:0 alpha:1] range:(NSMakeRange(0, nameString.length))];
     
     
     UIFont *statusFont = FONT_Regular(16.0);
@@ -1200,10 +1200,12 @@
     [statusString addAttribute:NSForegroundColorAttributeName value:[UIColor darkGrayColor] range:(NSMakeRange(0, statusString.length))];
     
     UIFont *eventFont = FONT_Heavy(16.0);;
-    NSDictionary *eventDict = [NSDictionary dictionaryWithObject:eventFont forKey:NSFontAttributeName];
+    NSDictionary *eventDict = [NSDictionary dictionaryWithObjectsAndKeys:eventFont,NSFontAttributeName, [UIColor greenColor], NSForegroundColorAttributeName, nil];
+    
+    
     NSMutableAttributedString *eventNameString = [[NSMutableAttributedString alloc]initWithString: [[[timeLineArray objectAtIndex:indexPath.row] valueForKey:@"Event"] valueForKey:@"name"] attributes:eventDict];
     
-    [eventNameString addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:(NSMakeRange(0, eventNameString.length))];
+    //[eventNameString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:228/255.0f green:123/255.0f blue:0 alpha:1] range:(NSMakeRange(0, eventNameString.length))];
     
     [nameString appendAttributedString:statusString];
     [nameString appendAttributedString:eventNameString];
@@ -1827,7 +1829,7 @@
         
     }
     [btnDelete setImage:[UIImage imageNamed:@"deleteNewIcon.png"] forState:UIControlStateNormal];
-    [btnShare setImage:[UIImage imageNamed:@"shareNew1.png"] forState:UIControlStateNormal];
+    [btnShare setImage:[UIImage imageNamed:@"shareNew2.png"] forState:UIControlStateNormal];
     [btnComment setImage:[UIImage imageNamed:@"commentIcon.png"] forState:UIControlStateNormal];
     
     
@@ -1991,7 +1993,7 @@
     {
         nameString = [[NSMutableAttributedString alloc] initWithString:[[[timeLineArray objectAtIndex:indexPath.row] valueForKey:@"User"] valueForKey:@"name"] attributes: nameDict];
     }
-    [nameString addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:(NSMakeRange(0, nameString.length))];
+    [nameString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:228/255.0f green:123/255.0f blue:0 alpha:1] range:(NSMakeRange(0, nameString.length))];
     
     
     UIFont *statusFont = FONT_Regular(16.0);
@@ -2025,11 +2027,13 @@
     
     [statusString addAttribute:NSForegroundColorAttributeName value:[UIColor darkGrayColor] range:(NSMakeRange(0, statusString.length))];
     
-    UIFont *eventFont = FONT_Heavy(16.0);
-    NSDictionary *eventDict = [NSDictionary dictionaryWithObject:eventFont forKey:NSFontAttributeName];
+    UIFont *eventFont = FONT_Heavy(16.0);;
+    NSDictionary *eventDict = [NSDictionary dictionaryWithObjectsAndKeys:eventFont,NSFontAttributeName, [UIColor greenColor], NSForegroundColorAttributeName, nil];
+    
+    
     NSMutableAttributedString *eventNameString = [[NSMutableAttributedString alloc]initWithString: [[[timeLineArray objectAtIndex:indexPath.row] valueForKey:@"Event"] valueForKey:@"name"] attributes:eventDict];
     
-    [eventNameString addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:(NSMakeRange(0, eventNameString.length))];
+    //[eventNameString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:228/255.0f green:123/255.0f blue:0 alpha:1] range:(NSMakeRange(0, eventNameString.length))];
     
     [nameString appendAttributedString:statusString];
     [nameString appendAttributedString:eventNameString];
@@ -2601,7 +2605,7 @@
     
     [btnDelete setImage:[UIImage imageNamed:@"deleteNewIcon.png"] forState:UIControlStateNormal];
     
-    [btnShare setImage:[UIImage imageNamed:@"shareNew1.png"] forState:UIControlStateNormal];
+    [btnShare setImage:[UIImage imageNamed:@"shareNew2.png"] forState:UIControlStateNormal];
     [btnComment setImage:[UIImage imageNamed:@"commentIcon.png"] forState:UIControlStateNormal];
     
     
@@ -2803,7 +2807,7 @@
     {
         nameString = [[NSMutableAttributedString alloc] initWithString:[[[timeLineArray objectAtIndex:indexPath.row] valueForKey:@"User"] valueForKey:@"name"] attributes: nameDict];
     }
-    [nameString addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:(NSMakeRange(0, nameString.length))];
+    [nameString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:228/255.0f green:123/255.0f blue:0 alpha:1] range:(NSMakeRange(0, nameString.length))];
     
     
     UIFont *statusFont = FONT_Regular(16.0);
@@ -2842,10 +2846,13 @@
     [statusString addAttribute:NSForegroundColorAttributeName value:[UIColor darkGrayColor] range:(NSMakeRange(0, statusString.length))];
     
     UIFont *eventFont = FONT_Heavy(16.0);;
-    NSDictionary *eventDict = [NSDictionary dictionaryWithObject:eventFont forKey:NSFontAttributeName];
+    NSDictionary *eventDict = [NSDictionary dictionaryWithObjectsAndKeys:eventFont,NSFontAttributeName, [UIColor greenColor], NSForegroundColorAttributeName, nil];
+    
+    //dictionaryWithObject:eventFont forKey:NSFontAttributeName];
+    
     NSMutableAttributedString *eventNameString = [[NSMutableAttributedString alloc]initWithString: [[[timeLineArray objectAtIndex:indexPath.row] valueForKey:@"Event"] valueForKey:@"name"] attributes:eventDict];
     
-    [eventNameString addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:(NSMakeRange(0, eventNameString.length))];
+    //[eventNameString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:228/255.0f green:123/255.0f blue:0 alpha:1] range:(NSMakeRange(0, eventNameString.length))];
     
     [nameString appendAttributedString:statusString];
     [nameString appendAttributedString:eventNameString];
@@ -3504,7 +3511,7 @@
         
     }
     [btnDelete setImage:[UIImage imageNamed:@"deleteNewIcon.png"] forState:UIControlStateNormal];
-    [btnShare setImage:[UIImage imageNamed:@"shareNew1.png"] forState:UIControlStateNormal];
+    [btnShare setImage:[UIImage imageNamed:@"shareNew2.png"] forState:UIControlStateNormal];
     [btnComment setImage:[UIImage imageNamed:@"commentIcon.png"] forState:UIControlStateNormal];
     
     
@@ -4190,7 +4197,7 @@
     
     
     
-    [nameString addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:(NSMakeRange(0, nameString.length))];
+    [nameString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:228/255.0f green:123/255.0f blue:0 alpha:1] range:(NSMakeRange(0, nameString.length))];
     
     
     UIFont *statusFont = FONT_Regular(16.0);
@@ -4225,17 +4232,19 @@
         
     }
     
-    [statusString addAttribute:NSForegroundColorAttributeName value:[UIColor darkGrayColor] range:(NSMakeRange(0, statusString.length))];
+    [statusString addAttribute:NSForegroundColorAttributeName value:[UIColor lightGrayColor] range:(NSMakeRange(0, statusString.length))];
     
-    UIFont *eventFont = FONT_Heavy(16.0);
-    NSDictionary *eventDict = [NSDictionary dictionaryWithObject:eventFont forKey:NSFontAttributeName];
-    NSMutableAttributedString *eventNameString = [[NSMutableAttributedString alloc]initWithString: [[[timeLineArray objectAtIndex:indexPath.row] valueForKey:@"Event"] valueForKey:@"name"] attributes:eventDict];
+    UIFont *eventFont = FONT_Heavy(16.0);;
+    NSDictionary *eventDict = [NSDictionary dictionaryWithObjectsAndKeys:eventFont,NSFontAttributeName, [UIColor greenColor], NSForegroundColorAttributeName, nil];
     
-    [eventNameString addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:(NSMakeRange(0, eventNameString.length))];
+    
+    NSMutableAttributedString *eventNameString = [[NSMutableAttributedString alloc] initWithString: [[[timeLineArray objectAtIndex:indexPath.row] valueForKey:@"Event"] valueForKey:@"name"] attributes:eventDict];
+    
+    //[eventNameString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:228/255.0f green:123/255.0f blue:0 alpha:1] range:(NSMakeRange(0, eventNameString.length))];
+    
     
     [nameString appendAttributedString:statusString];
     [nameString appendAttributedString:eventNameString];
-    
     
     
     lblCellTitle.attributedText = nameString;
@@ -4763,9 +4772,6 @@
             
             if([[[[timeLineArray objectAtIndex:tempIndexPath.row] valueForKey:@"Event"] valueForKey:@"image"] length]>0)
             {
-                
-                
-                
                 UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
                 if (cell == nil) {
                     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
@@ -5342,11 +5348,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-   /* EventDetailViewController *eventDetailVC =[[EventDetailViewController alloc] initWithNibName:@"EventDetailViewController" bundle:nil];
+    EventDetailViewController *eventDetailVC =[[EventDetailViewController alloc] initWithNibName:@"EventDetailViewController" bundle:nil];
     
     [eventDetailVC setEventID:[NSString stringWithFormat:@"%@",[[[timeLineArray objectAtIndex:indexPath.row] valueForKey:@"Event"] valueForKey:@"id"]]];
     
-    [self.navigationController pushViewController:eventDetailVC animated:YES];*/
+    [self.navigationController pushViewController:eventDetailVC animated:YES];
   
     
 }
