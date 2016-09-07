@@ -88,7 +88,7 @@
                             </constraints>
                             <fontDescription key="fontDescription" name="AvenirLTStd-Heavy" family="Avenir LT Std" pointSize="15"/>
                             <inset key="imageEdgeInsets" minX="-60" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="Sign in with Google" image="googleF">
+                            <state key="normal" title="Sign in with Google">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -229,6 +229,13 @@
                                 <constraint firstAttribute="height" constant="20" id="8Qb-yu-dCG"/>
                             </constraints>
                         </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GoogleL" translatesAutoresizingMaskIntoConstraints="NO" id="dEz-Bq-pVo">
+                            <rect key="frame" x="27" y="233" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="bXX-NJ-cFZ"/>
+                                <constraint firstAttribute="height" constant="20" id="kr5-ue-DhH"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -245,6 +252,7 @@
                         <constraint firstAttribute="trailing" secondItem="m4A-Hh-hDx" secondAttribute="trailing" constant="21" id="CRt-lh-tV8"/>
                         <constraint firstItem="UiQ-wP-Qlc" firstAttribute="top" secondItem="m4A-Hh-hDx" secondAttribute="bottom" constant="20" id="EKR-3b-Hjz"/>
                         <constraint firstAttribute="trailing" secondItem="bCO-9m-Fs7" secondAttribute="trailing" constant="20" id="G9U-Z2-BoU"/>
+                        <constraint firstItem="dEz-Bq-pVo" firstAttribute="leading" secondItem="qkL-6o-Ijm" secondAttribute="leading" constant="27" id="GEM-In-rFd"/>
                         <constraint firstItem="m4A-Hh-hDx" firstAttribute="top" secondItem="6b0-nM-hWJ" secondAttribute="bottom" constant="8" id="H9F-hC-uUq"/>
                         <constraint firstAttribute="bottom" secondItem="bCO-9m-Fs7" secondAttribute="bottom" constant="64" id="HKs-lK-6ZZ"/>
                         <constraint firstItem="bCO-9m-Fs7" firstAttribute="top" secondItem="UiQ-wP-Qlc" secondAttribute="bottom" constant="20" id="IQ0-tv-LXS"/>
@@ -261,6 +269,7 @@
                         <constraint firstAttribute="trailing" secondItem="6b0-nM-hWJ" secondAttribute="trailing" constant="22" id="ekh-Rm-YJT"/>
                         <constraint firstItem="QFV-mx-HSu" firstAttribute="leading" secondItem="qkL-6o-Ijm" secondAttribute="leading" constant="22" id="fH4-ez-D8C"/>
                         <constraint firstItem="lpR-CQ-f2d" firstAttribute="centerX" secondItem="Emk-eB-miV" secondAttribute="centerX" id="lxk-kP-pqq"/>
+                        <constraint firstItem="dEz-Bq-pVo" firstAttribute="top" secondItem="QFV-mx-HSu" secondAttribute="bottom" constant="22" id="qi4-UK-9xS"/>
                         <constraint firstItem="HTU-t9-6pI" firstAttribute="centerX" secondItem="qkL-6o-Ijm" secondAttribute="centerX" id="rLc-nZ-ypI"/>
                         <constraint firstItem="bFC-dB-qPo" firstAttribute="top" secondItem="qkL-6o-Ijm" secondAttribute="top" constant="133" id="weL-Fn-jDY"/>
                         <constraint firstItem="cj0-yt-PPM" firstAttribute="top" secondItem="QFV-mx-HSu" secondAttribute="bottom" constant="15" id="xER-hi-mBs"/>
@@ -286,9 +295,9 @@
         </view>
     </objects>
     <resources>
+        <image name="GoogleL" width="25" height="25"/>
         <image name="bg" width="320" height="568"/>
         <image name="facebook" width="21" height="20"/>
-        <image name="googleF" width="16" height="15"/>
         <image name="logo" width="157" height="36"/>
         <image name="twitter" width="21" height="20"/>
     </resources>

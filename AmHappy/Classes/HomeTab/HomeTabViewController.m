@@ -44,7 +44,7 @@
 
 #define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 
-@interface HomeTabViewController () <LeftMenuViewDelegate, MilesLanguageViewDelegate, SearchLocationViewDelegate>
+@interface HomeTabViewController () <LeftMenuViewDelegate, MilesLanguageViewDelegate, SearchLocationViewDelegate, DWBubbleMenuViewDelegate>
 {
     BOOL isMenuOpened;
     MilesLanguageView *milesLanguageView;
@@ -52,6 +52,7 @@
     SearchLocationView *searchLocationView;
     AnnotationViewController *selectedAnnotation;
     
+    DWBubbleMenuButton *downMenuButton;
     UITapGestureRecognizer *tap;
     NSArray *menuList;
     
@@ -229,7 +230,10 @@
     
     [self.view layoutIfNeeded];
     
-    [self eventsView];
+    if(!downMenuButton || downMenuButton == nil)
+    {
+        [self eventsView];
+    }
 }
 
 -(void)setCorners
@@ -246,8 +250,6 @@
 {
     self.viewFilter.frame = CGRectMake(1500, 0, ScreenSize.width, ScreenSize.height-50);
 }
-
-
 
 -(void)updateSideMeuState:(int)state
 {
@@ -421,7 +423,7 @@
 {
     [self.view layoutIfNeeded];
     self.const_BaseMenuView_Horizontal.constant = self.view.frame.size.width;
-    [self.imgBG setHidden:YES];
+    
     self.viewFilter.frame = CGRectMake(1500, 0, ScreenSize.width, ScreenSize.height-50);
     //[self.filterView setHidden:YES];
     isFilter =NO;
@@ -1355,6 +1357,9 @@
     if (!window)
         window = [[UIApplication sharedApplication].windows objectAtIndex:0];
     [[[window subviews] objectAtIndex:0] addSubview:leftMenuView];
+    
+    
+    
 }
 
 - (IBAction)toggleMenu:(id)sender
@@ -1373,6 +1378,8 @@
                              leftMenuView.frame = initalFrame;
                          }
                          completion:^(BOOL finished){
+                             
+                             
                              
                              leftMenuView.backgroundColor = [[UIColor darkGrayColor] colorWithAlphaComponent:0.5];
                              
@@ -1435,7 +1442,7 @@
 {
     CGRect frame = self.view.bounds;
     UIView *homeLabel = [self createHomeButtonView];
-    DWBubbleMenuButton *downMenuButton = [[DWBubbleMenuButton alloc] initWithFrame:CGRectMake(frame.size.width-(homeLabel.frame.size.width + 20),
+    downMenuButton = [[DWBubbleMenuButton alloc] initWithFrame:CGRectMake(frame.size.width-(homeLabel.frame.size.width + 20),
                                                                                               (frame.size.height - homeLabel.frame.size.height)-64,
                                                                                               homeLabel.frame.size.width,
                                                                                               homeLabel.frame.size.height)
@@ -1443,6 +1450,7 @@
     downMenuButton.homeButtonView = homeLabel;
     downMenuButton.buttonSpacing = 10.0f;
     [downMenuButton addButtons:[self createDemoButtonArray]];
+    [downMenuButton setDelegate:self];
     
     [self.view addSubview:downMenuButton];
 }
@@ -1459,6 +1467,8 @@
     label.text = @"+";
     label.textColor = [UIColor whiteColor];
     label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont boldSystemFontOfSize:30];
+    label.tag = 121;
     label.layer.cornerRadius = label.frame.size.height / 2.f;
     label.backgroundColor =[UIColor colorWithRed:242/255.f green:107/255.f blue:4/255.f alpha:1.0f];
     label.clipsToBounds = YES;
@@ -1721,9 +1731,6 @@
         
         //setValue:[[results valueForKey:@"User"] valueForKey:@"search_miles"] forKey:@"distance"];
         [USER_DEFAULTS synchronize];
-        
-        NSString *slideValue = [USER_DEFAULTS objectForKey:@"distance"];
-
         
         BOOL found =NO;
         NSLog(@"navigation are %@",self.navigationController.viewControllers);
@@ -2055,6 +2062,44 @@
     
 }
 
+
+- (void)bubbleMenuButtonWillExpand:(DWBubbleMenuButton *)expandableView
+{
+    [UIView animateWithDuration:0.25
+                          delay:0.0
+                        options:(UIViewAnimationOptionAllowUserInteraction | UIViewAnimationCurveLinear)
+                     animations:^ {
+                         UILabel *lbl = [expandableView viewWithTag:121];
+                         lbl.transform = CGAffineTransformMakeRotation(45.0*M_PI/180.0);
+                    }
+                     completion:^(BOOL finished){
+                     }
+     ];
+}
+
+- (void)bubbleMenuButtonDidExpand:(DWBubbleMenuButton *)expandableView
+{
+    [self.imgBG setHidden:NO];
+}
+
+- (void)bubbleMenuButtonWillCollapse:(DWBubbleMenuButton *)expandableView
+{
+    [UIView animateWithDuration:0.25
+                          delay:0.0
+                        options:(UIViewAnimationOptionAllowUserInteraction | UIViewAnimationCurveLinear)
+                     animations:^ {
+                         UILabel *lbl = [expandableView viewWithTag:121];
+                         lbl.transform = CGAffineTransformMakeRotation(45.0*M_PI/90.0);
+                     }
+                     completion:^(BOOL finished){
+                     }
+     ];
+}
+
+- (void)bubbleMenuButtonDidCollapse:(DWBubbleMenuButton *)expandableView
+{
+    [self.imgBG setHidden:YES];
+}
 
 
 @end

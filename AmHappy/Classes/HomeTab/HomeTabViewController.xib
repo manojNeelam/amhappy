@@ -77,12 +77,16 @@
                     </constraints>
                 </view>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gu8-iK-gBS">
-                    <rect key="frame" x="0.0" y="64" width="320" height="396"/>
+                    <rect key="frame" x="0.0" y="64" width="320" height="395"/>
                     <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="ho1-iV-QOs"/>
                     </connections>
                 </mapView>
+                <imageView hidden="YES" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bLl-Wc-Qxr">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="459"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJO-0c-A5M">
                     <rect key="frame" x="10" y="348" width="60" height="60"/>
                     <constraints>
@@ -96,10 +100,6 @@
                         <action selector="myLocationTapped:" destination="-1" eventType="touchUpInside" id="s04-jY-7zu"/>
                     </connections>
                 </button>
-                <imageView alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bLl-Wc-Qxr">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
-                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                </imageView>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="203-LI-XYE">
                     <rect key="frame" x="198" y="343" width="112" height="65"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -108,18 +108,28 @@
                         <constraint firstAttribute="width" constant="112" id="xFV-ye-rTP"/>
                     </constraints>
                 </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rYQ-EN-DrE">
+                    <rect key="frame" x="0.0" y="459" width="320" height="1"/>
+                    <color key="backgroundColor" red="0.89411764709999997" green="0.4823529412" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="pcY-yX-gHw"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="rYQ-EN-DrE" secondAttribute="bottom" id="BUA-jg-KHd"/>
+                <constraint firstItem="rYQ-EN-DrE" firstAttribute="top" secondItem="gu8-iK-gBS" secondAttribute="bottom" id="HJK-Iy-P1E"/>
                 <constraint firstItem="nbk-27-jQv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="HmH-a3-0yr"/>
                 <constraint firstAttribute="trailing" secondItem="203-LI-XYE" secondAttribute="trailing" constant="10" id="I46-m7-sH5"/>
                 <constraint firstItem="bLl-Wc-Qxr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Kur-zy-GIM"/>
                 <constraint firstAttribute="trailing" secondItem="bLl-Wc-Qxr" secondAttribute="trailing" id="LvM-N6-jL5"/>
                 <constraint firstAttribute="trailing" secondItem="nbk-27-jQv" secondAttribute="trailing" id="Opg-OM-5G9"/>
+                <constraint firstAttribute="trailing" secondItem="rYQ-EN-DrE" secondAttribute="trailing" id="RvD-HD-NIc"/>
+                <constraint firstItem="rYQ-EN-DrE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YAJ-is-yFC"/>
                 <constraint firstItem="gu8-iK-gBS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bJh-Mk-ZdN"/>
                 <constraint firstItem="nbk-27-jQv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bns-dp-e2Y"/>
-                <constraint firstAttribute="bottom" secondItem="bLl-Wc-Qxr" secondAttribute="bottom" id="cGO-xi-fN4"/>
-                <constraint firstAttribute="bottom" secondItem="gu8-iK-gBS" secondAttribute="bottom" id="eEN-Gi-4Xc"/>
+                <constraint firstItem="rYQ-EN-DrE" firstAttribute="top" secondItem="bLl-Wc-Qxr" secondAttribute="bottom" id="hbT-yI-chm"/>
                 <constraint firstAttribute="bottom" secondItem="uJO-0c-A5M" secondAttribute="bottom" constant="52" id="ibc-yK-nqz"/>
                 <constraint firstAttribute="trailing" secondItem="gu8-iK-gBS" secondAttribute="trailing" id="nq8-3s-Ajh"/>
                 <constraint firstItem="gu8-iK-gBS" firstAttribute="top" secondItem="nbk-27-jQv" secondAttribute="bottom" id="o1o-qH-hk5"/>
@@ -128,7 +138,7 @@
                 <constraint firstAttribute="bottom" secondItem="203-LI-XYE" secondAttribute="bottom" constant="52" id="ya4-8n-oDH"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-92" y="75"/>
+            <point key="canvasLocation" x="-129" y="14"/>
         </view>
     </objects>
     <resources>
