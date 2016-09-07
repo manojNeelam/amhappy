@@ -6,7 +6,7 @@
  modification, are permitted provided that the following conditions are
  met:
 
- Redistributions of source code must retain the above copyright
+ Redistributions   of source code must retain the above copyright
  notice, this list of conditions and the following disclaimer.
 
  Redistributions in binary form must reproduce the above copyright
@@ -112,7 +112,7 @@
 }
 
 - (void)maxDepthError {
-    self.error = [NSString stringWithFormat:@"Input depth exceeds max depth of %lu", (unsigned long)maxDepth];
+    self.error = [NSString stringWithFormat:@"Input depth exceeds max depth of %u", maxDepth];
     self.state = [SBJsonStreamParserStateError sharedInstance];
 }
 
