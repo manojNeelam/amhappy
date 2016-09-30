@@ -3,6 +3,22 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[HomeTabViewController responseDistanceChanged:]:HomeTabViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[[results valueForKey:@&quot;User&quot;] valueForKey:@&quot;search_miles&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[HomeTabViewController responsegetEvents:]:HomeTabViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "DELEGATE">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[TimeLineViewController configureTimeLineCellComment:atIndexPath:]:TimeLineViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -10,14 +26,6 @@
             </PersistentString>
             <PersistentString
                value = "lblCellTitle">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[HomeTabViewController responseDistanceChanged:]:HomeTabViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "[[results valueForKey:@&quot;User&quot;] valueForKey:@&quot;search_miles&quot;]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

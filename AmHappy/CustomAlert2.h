@@ -24,6 +24,6 @@
 @property (weak, nonatomic) IBOutlet UIView *customView;
 
 @property (nonatomic, strong) id <CustomAlertDelegate2> delegate;
-
+//18001030405 1 3 9
 
 @end

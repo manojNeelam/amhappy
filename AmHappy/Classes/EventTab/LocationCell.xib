@@ -80,6 +80,7 @@
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="btnCancel" destination="svC-zk-kih" id="bjI-tM-ht5"/>
                 <outlet property="btnLocation" destination="I2F-cl-Zae" id="rsd-bL-pm5"/>

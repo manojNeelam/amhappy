@@ -237,6 +237,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
     }
     
     self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager setDelegate:self];
     if ([[[UIDevice currentDevice] systemVersion] floatValue]>=8.0)
     {
@@ -702,6 +703,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 
     }
 }
+
 -(void)setWindowRoot
 {
     self.tabBarController = [[UITabBarController alloc] init];
@@ -1342,20 +1344,23 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 -(void)locationManager:(CLLocationManager *)manager
     didUpdateLocations:(NSArray *)locations
 {
-    
-
+    CLLocation *location;
+    location =  [manager location];
+    CLLocationCoordinate2D coordinate = [location coordinate];
+    currentLocation = [[CLLocation alloc] init];
+    _longitude = coordinate.longitude;
+    _latitude = coordinate.latitude;
 }
+
 -(void)responseLoginGoogleUser:(NSDictionary *)results
 {
+    
 }
 
 -(void)locationManager:(CLLocationManager *)manager
    didUpdateToLocation:(CLLocation *)newLocation
           fromLocation:(CLLocation *)oldLocation
 {
-    
-    
-    
     
 }
 

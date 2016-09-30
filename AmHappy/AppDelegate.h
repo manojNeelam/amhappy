@@ -47,12 +47,17 @@
     BOOL isXmppConnected;
     
     
+    CLLocation *currentLocation;
+    
+    
     
      __strong XMPPRoom   * xmppRoom;
      __strong id <XMPPRoomStorage> xmppRoomStorage;
      XMPPRoomMemoryStorage *roomStorage;
   
 }
+
+@property (nonatomic, assign) float longitude, latitude;
 
 @property (strong, nonatomic) UIWindow *window;
 - (BOOL) connectedToNetwork;

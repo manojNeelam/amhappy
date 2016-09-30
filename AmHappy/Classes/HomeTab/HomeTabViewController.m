@@ -473,8 +473,6 @@
 
 -(void)callApi:(NSString *)catList
 {
-    return;
-    
     if(isSearched)
     {
          [mc getHomeEvents:[USER_DEFAULTS valueForKey:@"userid"] Latitude:[NSString stringWithFormat:@"%f",lat] Longitude:[NSString stringWithFormat:@"%f",longi] Category_id:catList Sel:@selector(responsegetEvents:)];
@@ -586,9 +584,7 @@
         {
             [self.lblNotificationFriend setHidden:NO];
         }
-            
-    
-        
+
         if(isfirst)
         {
             isfirst=NO;
@@ -611,24 +607,22 @@
             {
                 if(DELEGATE.locationManager.location.coordinate.latitude>0)
                 {
-                    double miles = 5.0;
-                    double scalingFactor = ABS( (cos(2 * M_PI * self.mapView.userLocation.coordinate.latitude / 360.0) ));
-                    
-                    MKCoordinateSpan span;
-                    
-                    span.latitudeDelta = miles/69.0;
-                    span.longitudeDelta = miles/(scalingFactor * 69.0);
-                    
-                    MKCoordinateRegion region1;
-                    region1.span = span;
-                    region1.center = self.mapView.userLocation.coordinate;
-                    
-                    [mapView setRegion:region1 animated:YES];
+//                    double miles = 5.0;
+//                    double scalingFactor = ABS( (cos(2 * M_PI * self.mapView.userLocation.coordinate.latitude / 360.0) ));
+//                    
+//                    MKCoordinateSpan span;
+//                    
+//                    //span.latitudeDelta = miles/69.0;
+//                    //span.longitudeDelta = miles/(scalingFactor * 69.0);
+//                    
+//                    MKCoordinateRegion region1;
+//                    //region1.span = span;
+//                    region1.center = self.mapView.userLocation.coordinate;
+//                    
+//                    [mapView setRegion:region1 animated:YES];
+                    [self zoomInToMyLocation];
                 }
             }
-           
-            
-           
         }
     }
     else
@@ -838,13 +832,12 @@
 
 - (void)plotPositions:(NSArray *)data
 {
-    
-    [self.mapView removeAnnotations:self.mapView.annotations];
-    
     if(data.count>0)
     {
+        
         for (int i=0; i<[data count]; i++)
         {
+            
             //Retrieve the NSDictionary object in each index of the array.
             NSDictionary* place = [data objectAtIndex:i];
             //   NSLog(@"place is %@",place);
@@ -852,17 +845,19 @@
             //There is a specific NSDictionary object that gives us location info.
             NSDictionary *geo = [place objectForKey:@"geometry"];
             
+            
             //Get our name and address info for adding to a pin.
             NSString *name;
             if([[place objectForKey:@"address_components"] count]>0)
             {
                 name=[[[place objectForKey:@"address_components"] objectAtIndex:0] valueForKey:@"short_name"];
+                
             }
             else
             {
                 name=[place objectForKey:@"formatted_address"];
+                
             }
-            
             NSString *vicinity=[place objectForKey:@"formatted_address"];
             
             //Get the lat and long for the location.
@@ -877,26 +872,27 @@
             
             //Create a new annotiation.
             
-            selectedAnnotation = [[AnnotationViewController alloc] init];
-            selectedAnnotation.title = name;
-            selectedAnnotation.subtitle = vicinity;
-            selectedAnnotation.coordinate=placeCoord;
-            region.center.latitude =selectedAnnotation.coordinate.latitude;
-            region.center.longitude =selectedAnnotation.coordinate.longitude;
+            AnnotationViewController    *ann1 = [[AnnotationViewController alloc] init];
+            ann1.title = name;
+            ann1.subtitle = vicinity;
+            ann1.coordinate=placeCoord;
+            region.center.latitude =ann1.coordinate.latitude;
+            region.center.longitude =ann1.coordinate.longitude;
             lat=placeCoord.latitude;
             longi =placeCoord.longitude;
             // region.span.latitudeDelta = 0.01;
             
-            [self.mapView addAnnotation:selectedAnnotation];
-            
+            [self.mapView addAnnotation:ann1];
             [self.mapView setRegion:region animated:YES];
             isSearched =YES;
             
             if(DELEGATE.selectedCategoryArray.count==0)
             {
                 //[self.mapView removeAnnotations:self.mapView.annotations];
+                
                 if(isfirst)
                 {
+                    
                     [DELEGATE.selectedCategoryArray addObjectsFromArray:DELEGATE.categoryArray];
                     NSString *resultAsString =[DELEGATE.selectedCategoryArray componentsJoinedByString:@","];
                     [self callApi:resultAsString];
@@ -906,8 +902,12 @@
                     [self.view makeToast:[localization localizedStringForKey:@"No result found"]
                                 duration:2.0
                                 position:@"center"];
-                   // [DELEGATE showalert:self Message:[localization localizedStringForKey:@"No result found"] AlertFlag:1 ButtonFlag:1];
+                    // [DELEGATE showalert:self Message:[localization localizedStringForKey:@"No result found"] AlertFlag:1 ButtonFlag:1];
+                    
                 }
+                
+                
+                
             }
             else
             {
@@ -915,8 +915,10 @@
                 [self callApi:resultAsString];
             }            //   [self.mapview setCenterCoordinate:region.center animated:YES];
             break;
+            
+            
         }
-        [self zoomToFitMapAnnotations:self.mapView];
+        //[self zoomToFitMapAnnotations:self.mapView ];
     }
     else
     {
@@ -926,15 +928,14 @@
                     duration:2.0
                     position:@"center"];
         
-       // [DELEGATE showalert:self Message:[localization localizedStringForKey:@"No result found"] AlertFlag:1 ButtonFlag:1];
+        // [DELEGATE showalert:self Message:[localization localizedStringForKey:@"No result found"] AlertFlag:1 ButtonFlag:1];
         
-      /*  UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"AmHappy" message:[localization localizedStringForKey:@"No result found"] delegate:nil cancelButtonTitle:[localization localizedStringForKey:@"Ok"] otherButtonTitles:nil, nil];
-        [alert show];*/
+        /*  UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"AmHappy" message:[localization localizedStringForKey:@"No result found"] delegate:nil cancelButtonTitle:[localization localizedStringForKey:@"Ok"] otherButtonTitles:nil, nil];
+         [alert show];*/
     }
     [drk hide];
     // [self zoomToFitMapAnnotations:self.mapview];
 }
-
 -(void)zoomToFitMapAnnotations:(MKMapView *)mapview1 {
     if ([mapview1.annotations count] == 0) return;
     
@@ -994,37 +995,40 @@
 {
     if (!view.rightCalloutAccessoryView)
     {
-       /* if ([view.annotation isKindOfClass:[AnnotationViewController class]])
-        {
-            AnnotationViewController *ann=(AnnotationViewController *)view.annotation;
-           // NSLog(@"ann tag is %@",ann.tagValue);
-            NSLog(@"ann tag is %@",ann.subtitle);
-            NSLog(@"ann tag is %d",ann.catID);
-
-
-            if(ann.catID ==0)
-            {
-                if(DELEGATE.connectedToNetwork)
-                {
-                    NSString *resultAsString;
-                    if(DELEGATE.selectedCategoryArray.count>0)
-                    {
-                        resultAsString =[DELEGATE.selectedCategoryArray componentsJoinedByString:@","];
-                        
-                    }
-                    else
-                    {
-                        resultAsString =[catArray componentsJoinedByString:@","];
-                    }
-                    
-                    lat =ann.coordinate.latitude;
-                    longi =ann.coordinate.longitude;
-
-                    [mc getHomeEvents:[USER_DEFAULTS valueForKey:@"userid"] Latitude:[NSString stringWithFormat:@"%f",ann.coordinate.latitude] Longitude:[NSString stringWithFormat:@"%f",ann.coordinate.longitude] Category_id:resultAsString Sel:@selector(responsegetEvents:)];
-                }
-            }
-
-        }*/
+        /* if ([view.annotation isKindOfClass:[AnnotationViewController class]])
+         {
+         AnnotationViewController *ann=(AnnotationViewController *)view.annotation;
+         // NSLog(@"ann tag is %@",ann.tagValue);
+         NSLog(@"ann tag is %@",ann.subtitle);
+         NSLog(@"ann tag is %d",ann.catID);
+         
+         
+         if(ann.catID ==0)
+         {
+         if(DELEGATE.connectedToNetwork)
+         {
+         NSString *resultAsString;
+         if(DELEGATE.selectedCategoryArray.count>0)
+         {
+         resultAsString =[DELEGATE.selectedCategoryArray componentsJoinedByString:@","];
+         
+         }
+         else
+         {
+         resultAsString =[catArray componentsJoinedByString:@","];
+         }
+         
+         lat =ann.coordinate.latitude;
+         longi =ann.coordinate.longitude;
+         
+         [mc getHomeEvents:[USER_DEFAULTS valueForKey:@"userid"] Latitude:[NSString stringWithFormat:@"%f",ann.coordinate.latitude] Longitude:[NSString stringWithFormat:@"%f",ann.coordinate.longitude] Category_id:resultAsString Sel:@selector(responsegetEvents:)];
+         }
+         }
+         
+         }*/
+        
+        
+        
     }
     
 }
@@ -1047,16 +1051,20 @@
         self.mapView.userLocation.title = @"Current Location";
         //  [self.mapview setRegion:MKCoordinateRegionMakeWithDistance(annotation.coordinate, 500, 500) animated:YES];
         [pinView setImage:[UIImage imageNamed:@"currentLocation.png"]];
-
-      //  pinView.pinColor = MKPinAnnotationColorRed;
-      //  pinView.animatesDrop = NO;
+        
+        //  pinView.pinColor = MKPinAnnotationColorRed;
+        //  pinView.animatesDrop = NO;
         pinView.canShowCallout = YES;
         [pinView setSelected:YES animated:YES];
+        
+        
+        
     }
     else
     {
-       // pinView.animatesDrop = NO;
-      //  pinView.pinColor = MKPinAnnotationColorPurple;
+        
+        // pinView.animatesDrop = NO;
+        //  pinView.pinColor = MKPinAnnotationColorPurple;
         pinView.canShowCallout = YES;
         [pinView setSelected:YES animated:YES];
         
@@ -1064,12 +1072,12 @@
         {
             AnnotationViewController *ann=(AnnotationViewController *)annotation;
             /*if(ann.tagValue.length>0)
-            {*/
+             {*/
             if(ann.catID !=0)
             {
                 [pinView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d.png",ann.tagValue]]];
                 UIImageView *img =[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-              //  [img sd_setImageWithURL:[NSURL URLWithString:[[eventArray objectAtIndex:ann.arrayId] valueForKey:@"image"]]];
+                //  [img sd_setImageWithURL:[NSURL URLWithString:[[eventArray objectAtIndex:ann.arrayId] valueForKey:@"image"]]];
                 [img sd_setImageWithURL:[NSURL URLWithString:[[eventArray objectAtIndex:ann.arrayId] valueForKey:@"thumb_image"]] placeholderImage:[UIImage imageNamed:@"mapIcon.png"]];
                 pinView.leftCalloutAccessoryView =img;
                 
@@ -1078,20 +1086,19 @@
                 myDetailAccessoryButton.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
                 myDetailAccessoryButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
                 pinView.rightCalloutAccessoryView = myDetailAccessoryButton;
-            }
-            else
-            {
-                pinView.canShowCallout = YES;
-                pinView.image = [UIImage imageNamed:@"currentLocation.png"];
-                pinView.calloutOffset = CGPointMake(0, 32);
-                pinView.annotation = annotation;
+                
             }
         }
+        
+        
     }
+    
+    
+    
+    
     return pinView;
+    
 }
-
-
 - (void)mapView:(MKMapView *)mv annotationView:(MKAnnotationView *)pin calloutAccessoryControlTapped:(UIControl *)control
 {
     if ([pin.annotation isKindOfClass:[AnnotationViewController class]])
@@ -1100,21 +1107,21 @@
         AnnotationViewController *ann=(AnnotationViewController *)pin.annotation;
         /*if(ann.tagValue.length>0)
          {*/
-      /*  if(ann.catID !=0)
-        {
-            [pinView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d.png",ann.tagValue]]];
-            UIImageView *img =[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-            //  [img sd_setImageWithURL:[NSURL URLWithString:[[eventArray objectAtIndex:ann.arrayId] valueForKey:@"image"]]];
-            [img sd_setImageWithURL:[NSURL URLWithString:[[eventArray objectAtIndex:ann.arrayId] valueForKey:@"image"]] placeholderImage:[UIImage imageNamed:@"logo.png"]];
-            pinView.leftCalloutAccessoryView =img;
-            
-            UIButton *myDetailAccessoryButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
-            myDetailAccessoryButton.frame = CGRectMake(0, 0, 23, 23);
-            myDetailAccessoryButton.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-            myDetailAccessoryButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-            pinView.rightCalloutAccessoryView = myDetailAccessoryButton;
-            
-        }*/
+        /*  if(ann.catID !=0)
+         {
+         [pinView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d.png",ann.tagValue]]];
+         UIImageView *img =[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+         //  [img sd_setImageWithURL:[NSURL URLWithString:[[eventArray objectAtIndex:ann.arrayId] valueForKey:@"image"]]];
+         [img sd_setImageWithURL:[NSURL URLWithString:[[eventArray objectAtIndex:ann.arrayId] valueForKey:@"image"]] placeholderImage:[UIImage imageNamed:@"logo.png"]];
+         pinView.leftCalloutAccessoryView =img;
+         
+         UIButton *myDetailAccessoryButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+         myDetailAccessoryButton.frame = CGRectMake(0, 0, 23, 23);
+         myDetailAccessoryButton.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+         myDetailAccessoryButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+         pinView.rightCalloutAccessoryView = myDetailAccessoryButton;
+         
+         }*/
         
         EventDetailViewController *eventDetailVC =[[EventDetailViewController alloc] initWithNibName:@"EventDetailViewController" bundle:nil];
         [eventDetailVC setEventID:[NSString stringWithFormat:@"%d",ann.eventId]];
@@ -1124,6 +1131,7 @@
         
     }
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -1210,6 +1218,7 @@
     [otherVC setIsMy:YES];
     [self.navigationController pushViewController:otherVC animated:YES];
 }
+
 - (IBAction)myLocationTapped:(id)sender
 {
     //[self.filterView setHidden:YES];
@@ -1253,9 +1262,8 @@
             [self callApi:resultAsString];
         }
     }
-    
-   
 }
+
 -(void)ok1BtnTapped:(id)sender
 {
     // NSLog(@"ok1BtnTapped");
@@ -1442,8 +1450,8 @@
 {
     CGRect frame = self.view.bounds;
     UIView *homeLabel = [self createHomeButtonView];
-    downMenuButton = [[DWBubbleMenuButton alloc] initWithFrame:CGRectMake(frame.size.width-(homeLabel.frame.size.width + 20),
-                                                                                              (frame.size.height - homeLabel.frame.size.height)-64,
+    downMenuButton = [[DWBubbleMenuButton alloc] initWithFrame:CGRectMake(frame.size.width-(homeLabel.frame.size.width + 10),
+                                                                                              (frame.size.height - homeLabel.frame.size.height)-44,
                                                                                               homeLabel.frame.size.width,
                                                                                               homeLabel.frame.size.height)
                                                                 expansionDirection:DirectionUp];
@@ -1458,19 +1466,22 @@
 - (UIView *)createHomeButtonView {
     
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 160, 65)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 180, 65)];
     [view setBackgroundColor:[UIColor clearColor]];
     
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(160-55, 5.f, 55, 55)];
+    UIImageView *label = [[UIImageView alloc] initWithFrame:CGRectMake(180-50, 5, 50, 50)];//[UIButton buttonWithType:UIButtonTypeCustom];
+    //label.frame =
+    [label setImage:[UIImage imageNamed:@"add"]];
     
-    label.text = @"+";
-    label.textColor = [UIColor whiteColor];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.font = [UIFont boldSystemFontOfSize:30];
+    //initWithFrame:CGRectMake(160-50, 5.f, 50, 50)];
+    //label.text = @"+";
+    //label.textColor = [UIColor whiteColor];
+    //label.textAlignment = NSTextAlignmentCenter;
+    //label.font = [UIFont boldSystemFontOfSize:30];
     label.tag = 121;
     label.layer.cornerRadius = label.frame.size.height / 2.f;
-    label.backgroundColor =[UIColor colorWithRed:242/255.f green:107/255.f blue:4/255.f alpha:1.0f];
+    //label.backgroundColor = [UIColor colorWithRed:242/255.f green:107/255.f blue:4/255.f alpha:1.0f];
     label.clipsToBounds = YES;
     [view addSubview:label];
     
@@ -1492,7 +1503,7 @@
         [button setImage:[UIImage imageNamed:title] forState:UIControlStateNormal];
         //[button setTitle:title forState:UIControlStateNormal];
         
-        [button.titleLabel setFont:[UIFont systemFontOfSize:13]];
+        [button.titleLabel setFont:[UIFont fontWithName:@"AvenirLTStd-Heavy" size:16.0f]];
         [button setTitle:[titilesList objectAtIndex:i] forState:UIControlStateNormal];
         
         [button sizeToFit];
@@ -1504,7 +1515,7 @@
         
         
         //button.imageEdgeInsets = UIEdgeInsetsMake(0, button.titleLabel.frame.size.width, 0, -button.titleLabel.frame.size.width);
-        button.frame = CGRectMake(0.f, 0.f, 160, 45);
+        button.frame = CGRectMake(0.f, 0.f, 180, 45);
         //button.layer.cornerRadius = button.frame.size.height / 2.f;
         //button.backgroundColor = [UIColor colorWithRed:0.f green:0.f blue:0.f alpha:0.5f];
         
@@ -1761,7 +1772,6 @@
 -(IBAction)sliderDidChange:(RGSColorSlider *)sender{
     
 }
-
 
 -(void)onClickCancelButton
 {
@@ -2059,9 +2069,7 @@
 -(void)selectedAddress:(NSDictionary *)dict
 {
     [self plotPositions:[[NSArray alloc] initWithObjects:dict, nil]];
-    
 }
-
 
 - (void)bubbleMenuButtonWillExpand:(DWBubbleMenuButton *)expandableView
 {
@@ -2101,5 +2109,13 @@
     [self.imgBG setHidden:YES];
 }
 
+-(void)zoomInToMyLocation
+{
+    region.center.latitude =  lat;
+    region.center.longitude = longi;
+    region.span.longitudeDelta = 0.15f;
+    region.span.latitudeDelta = 0.15f;
+    [mapView setRegion:region animated:YES];
+}
 
 @end

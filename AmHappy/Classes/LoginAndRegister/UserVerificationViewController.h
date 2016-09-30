@@ -8,16 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "TPKeyboardAvoidingScrollView.h"
+#import "AppTextField.h"
+#import "BaseViewController.h"
 
-@interface UserVerificationViewController : UIViewController<UITextFieldDelegate,UIPickerViewDataSource,UIPickerViewDelegate,CustomAlertDelegate>
+@interface UserVerificationViewController : BaseViewController <UITextFieldDelegate,UIPickerViewDataSource,UIPickerViewDelegate,CustomAlertDelegate>
 @property (weak, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *scrollview;
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
-@property (weak, nonatomic) IBOutlet UITextField *txtName;
-@property (weak, nonatomic) IBOutlet UITextField *txtHobby;
-@property (weak, nonatomic) IBOutlet UITextField *txtRelation;
+@property (weak, nonatomic) IBOutlet AppTextField *txtName;
+@property (weak, nonatomic) IBOutlet AppTextField *txtHobby;
+@property (weak, nonatomic) IBOutlet AppTextField *txtRelation;
 - (IBAction)submitTapped:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *btnSubmit;
-@property (weak, nonatomic) IBOutlet UILabel *lblHobby;
+@property (weak, nonatomic) IBOutlet AppTextField *lblHobby;
 - (IBAction)hobbyTapped:(id)sender;
 
 @end

@@ -1611,7 +1611,9 @@
     UIView *headerView = [[UIView alloc]
                           initWithFrame:CGRectMake(0,0,self.view.frame.size.width, 40)];
     UILabel *title =[[UILabel alloc] init];
-    [title setFrame:CGRectMake(0,0,self.view.frame.size.width, 40)];
+    [headerView setBackgroundColor:[UIColor whiteColor]];
+
+    [title setFrame:CGRectMake(20,0,self.view.frame.size.width-40, 40)];
     
     
     if(section==0)
@@ -1623,7 +1625,7 @@
         [title setText:[localization localizedStringForKey:@"Location"]];
         
     }
-    [headerView setBackgroundColor:[[UIColor darkGrayColor] colorWithAlphaComponent:0.7]];
+    [headerView setBackgroundColor:[UIColor colorWithRed:44/255.0f green:44/255.0f blue:44/255.0f alpha:1.0f]];
     [title setTextColor:[UIColor whiteColor]];
     [title setTextAlignment:NSTextAlignmentLeft];
     
@@ -1644,7 +1646,7 @@
     UIView *headerView = [[UIView alloc]
                           initWithFrame:CGRectMake(0,0,self.view.frame.size.width, 80)];
     
-    [headerView setBackgroundColor:[UIColor clearColor]];
+    [headerView setBackgroundColor:[UIColor whiteColor]];
     
     UILabel *title =[[UILabel alloc] init];
     
@@ -1656,7 +1658,7 @@
     [button setImage:[UIImage imageNamed:@"add.png"] forState:UIControlStateNormal];
     button.tag =section;
     [headerView addSubview:button];
-    [title setFrame:CGRectMake(0,60,self.view.frame.size.width, 20)];
+    [title setFrame:CGRectMake(20,60,self.view.frame.size.width-40, 20)];
     
     if(section==0)
     {
@@ -1733,7 +1735,10 @@
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DateCell" owner:self options:nil];
             cell=[nib objectAtIndex:0] ;
         }
-        [cell setBackgroundColor:[UIColor colorWithRed:233/255.0f green:235/255.0f blue:240/255.0f alpha:1.0]];
+        [cell setBackgroundColor:[UIColor whiteColor]];
+
+        
+        //[cell setBackgroundColor:[UIColor colorWithRed:233/255.0f green:235/255.0f blue:240/255.0f alpha:1.0]];
         
         
         cell.delegate=self;
@@ -1775,9 +1780,12 @@
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"LocationCell2" owner:self options:nil];
             cell=[nib objectAtIndex:0] ;
         }
+        
+        [cell setBackgroundColor:[UIColor whiteColor]];
+        
         cell.delegate=self;
         
-        [cell setBackgroundColor:[UIColor colorWithRed:233/255.0f green:235/255.0f blue:240/255.0f alpha:1.0]];
+        //[cell setBackgroundColor:[UIColor colorWithRed:233/255.0f green:235/255.0f blue:240/255.0f alpha:1.0]];
         
         [cell.lblLocation setText:[localization localizedStringForKey:@"Tap to add Location"]];
         
@@ -1798,9 +1806,6 @@
             cell.lblLocation.text =[[locationArray objectAtIndex:indexPath.row] valueForKey:@"location"];
             [cell.lblLocation setTextColor:[UIColor blackColor]];
         }
-        
-       
-        
         
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         

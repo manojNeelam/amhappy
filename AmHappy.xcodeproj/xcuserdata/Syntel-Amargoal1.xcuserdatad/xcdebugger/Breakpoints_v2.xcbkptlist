@@ -10,43 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AmHappy/Classes/HomeTab/HomeTabViewController.m"
-            timestampString = "494944201.115994"
+            timestampString = "495463465.005892"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "525"
-            endingLineNumber = "525"
-            landmarkName = "-responsegetEvents:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AmHappy/Classes/HomeTab/HomeTabViewController.m"
-            timestampString = "494944201.115994"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1137"
-            endingLineNumber = "1137"
-            landmarkName = "-searchTapped:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AmHappy/Classes/HomeTab/HomeTabViewController.m"
-            timestampString = "494944201.115994"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "769"
-            endingLineNumber = "769"
+            startingLineNumber = "763"
+            endingLineNumber = "763"
             landmarkName = "-searchMap:"
             landmarkType = "5">
          </BreakpointContent>
@@ -64,22 +32,6 @@
             startingLineNumber = "136"
             endingLineNumber = "136"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AmHappy/Classes/HomeTab/HomeTabViewController.m"
-            timestampString = "494944201.115994"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "843"
-            endingLineNumber = "843"
-            landmarkName = "-plotPositions:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -696,12 +648,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AmHappy/Classes/HomeTab/HomeTabViewController.m"
-            timestampString = "494944201.115994"
+            timestampString = "495465048.69386"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "404"
-            endingLineNumber = "404"
-            landmarkName = "-alertView:clickedButtonAtIndex:"
+            startingLineNumber = "2113"
+            endingLineNumber = "2113"
+            landmarkName = "-zoomInToMyLocation"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -712,12 +664,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AmHappy/Classes/HomeTab/HomeTabViewController.m"
-            timestampString = "494944201.115994"
+            timestampString = "495465048.69386"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "405"
-            endingLineNumber = "405"
-            landmarkName = "-alertView:clickedButtonAtIndex:"
+            startingLineNumber = "2117"
+            endingLineNumber = "2117"
+            landmarkName = "-zoomInToMyLocation"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -727,13 +679,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AmHappy/AppDelegate.m"
-            timestampString = "494935677.018326"
+            filePath = "AmHappy/HelperClasses/ModelClasses/ModelClass.m"
+            timestampString = "495464308.277465"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "620"
-            endingLineNumber = "620"
-            landmarkName = "-showalert:Message:AlertFlag:ButtonFlag:"
+            startingLineNumber = "1045"
+            endingLineNumber = "1045"
+            landmarkName = "-getHomeEvents:Latitude:Longitude:Category_id:Sel:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -743,29 +695,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AmHappy/AppDelegate.m"
-            timestampString = "494935677.32947"
+            filePath = "AmHappy/HelperClasses/ModelClasses/ModelClass.m"
+            timestampString = "495464308.55762"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "621"
-            endingLineNumber = "621"
-            landmarkName = "-showalert:Message:AlertFlag:ButtonFlag:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AmHappy/Classes/HomeTab/HomeTabViewController.m"
-            timestampString = "494944201.115994"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1263"
-            endingLineNumber = "1263"
-            landmarkName = "-ok1BtnTapped:"
+            startingLineNumber = "1047"
+            endingLineNumber = "1047"
+            landmarkName = "-getHomeEvents:Latitude:Longitude:Category_id:Sel:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -776,12 +712,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AmHappy/Classes/HomeTab/HomeTabViewController.m"
-            timestampString = "494944201.115994"
+            timestampString = "495464459.576203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1269"
-            endingLineNumber = "1269"
-            landmarkName = "-ok2BtnTapped:"
+            startingLineNumber = "624"
+            endingLineNumber = "624"
+            landmarkName = "-responsegetEvents:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AmHappy/Classes/HomeTab/HomeTabViewController.m"
+            timestampString = "495464461.752094"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "565"
+            endingLineNumber = "565"
+            landmarkName = "-responsegetEvents:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AmHappy/Classes/HomeTab/HomeTabViewController.m"
+            timestampString = "495464482.252651"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "603"
+            endingLineNumber = "603"
+            landmarkName = "-responsegetEvents:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

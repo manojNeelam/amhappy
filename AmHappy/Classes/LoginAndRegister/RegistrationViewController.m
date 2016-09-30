@@ -907,15 +907,15 @@
             
             return FALSE;
         }
-        else  if(!isCheck)
-        {
-            [self showPopUpwithMsg:[localization localizedStringForKey:@"Please accept Terms and Policy to Continue."]];
-            
-            //[DELEGATE showalert:self Message:[localization localizedStringForKey:@"Please accept Terms and Policy to Continue"] AlertFlag:1 ButtonFlag:1];
-          
-            
-            return FALSE;
-        }
+//        else  if(!isCheck)
+//        {
+//            [self showPopUpwithMsg:[localization localizedStringForKey:@"Please accept Terms and Policy to Continue."]];
+//            
+//            //[DELEGATE showalert:self Message:[localization localizedStringForKey:@"Please accept Terms and Policy to Continue"] AlertFlag:1 ButtonFlag:1];
+//          
+//            
+//            return FALSE;
+//        }
         else
         {
             return TRUE;

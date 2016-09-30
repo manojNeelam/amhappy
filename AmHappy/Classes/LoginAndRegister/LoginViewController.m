@@ -122,6 +122,7 @@
 {
     [self localize];
 }
+
 -(void)localize
 {
     

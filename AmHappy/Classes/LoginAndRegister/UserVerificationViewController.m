@@ -11,6 +11,7 @@
 #import "HobbiyViewController.h"
 
 @interface UserVerificationViewController ()
+@property (nonatomic, strong) AppTextField *activeTxtFld;
 
 @end
 
@@ -29,6 +30,7 @@
 
 
 }
+
 @synthesize lblTitle,txtHobby,txtName,txtRelation,scrollview,btnSubmit,lblHobby;
 
 - (void)viewDidLoad {
@@ -36,6 +38,13 @@
     
     mc =[[ModelClass alloc] init];
     [mc setDelegate:self];
+    
+    [self customiseTxtFlds];
+
+    [self.txtName.paddingBGView setBackgroundColor:[UIColor colorWithRed:117/255.0f green:171/255.0f blue:35/255.0f alpha:1.0f]];
+    [self.txtName setTextColor:[UIColor colorWithRed:117/255.0f green:171/255.0f blue:35/255.0f alpha:1.0f]];
+    
+    
     relationID =-1;
     [self localize];
     relationArray =[[NSMutableArray alloc] init];
@@ -98,9 +107,9 @@
     UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     mytoolbar1.items = [NSArray arrayWithObjects:prev,next,flexibleSpace,done1, nil];
     
-    self.txtHobby.inputAccessoryView =mytoolbar1;
-    self.txtName.inputAccessoryView =mytoolbar1;
-    self.txtRelation.inputAccessoryView =mytoolbar1;
+//    self.txtHobby.inputAccessoryView =mytoolbar1;
+//    self.txtName.inputAccessoryView =mytoolbar1;
+//    self.txtRelation.inputAccessoryView =mytoolbar1;
     
     listPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height-150)];
     [listPicker setBackgroundColor:[UIColor whiteColor]];
@@ -111,19 +120,20 @@
     self.txtRelation.inputView =listPicker;
     
     
-
+    
     if(DELEGATE.connectedToNetwork)
     {
         [mc getDropDowns:nil Sel:@selector(responseGetDropDown:)];
 
         //[mc getDropDowns:@selector(responseGetDropDown:)];
     }
-
 }
+
 -(void)viewWillAppear:(BOOL)animated
 {
     
 }
+
 -(void)localize
 {
     [self.txtRelation setPlaceholder:[localization localizedStringForKey:@"Select Relationship Status"]];
@@ -132,6 +142,18 @@
     [self.lblTitle setText:[localization localizedStringForKey:@"Complete Profile"]];
     [self.lblHobby setText:[localization localizedStringForKey:@"Tap to select Hobby"]];
 }
+
+-(void)customiseTxtFlds
+{
+    [self.txtName setPaddingViewWithImg:@"userLogo"];
+    [self.txtRelation setPaddingViewWithImg:@"passwordLogo"];
+    [self.lblHobby setPaddingViewWithImg:@"passwordLogo"];
+    [self.lblHobby setTextColor:[UIColor whiteColor]];
+    
+    //[self.txtUser.paddingBGView setBackgroundColor:[UIColor colorWithRed:117/255.0f green:171/255.0f blue:35/255.0f alpha:1.0f]];
+    //[self.btnForget setTitleColor:[[UIColor whiteColor] colorWithAlphaComponent:0.8] forState:UIControlStateNormal];
+}
+
 -(void)hobbySelected:(NSNotification *)notification
 {
     NSDictionary *json = [NSDictionary dictionaryWithDictionary:[notification userInfo]];
@@ -235,6 +257,13 @@
 }
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {
+    [self resetPaddingBgColor];
+    
+    _activeTxtFld = (AppTextField *)textField;
+    [_activeTxtFld.paddingBGView setBackgroundColor:[UIColor colorWithRed:117/255.0f green:171/255.0f blue:35/255.0f alpha:1.0f]];
+    [_activeTxtFld setTextColor:[UIColor colorWithRed:117/255.0f green:171/255.0f blue:35/255.0f alpha:1.0f]];
+    
+    
     
     /*  if(textField==self.txtUser )
      {
@@ -251,6 +280,9 @@
 
 -(void)textFieldDidEndEditing:(UITextField *)textField
 {
+    
+    [_activeTxtFld setTextColor:[UIColor whiteColor]];
+
     /* if(textField==self.txtUser )
      {
      [self.imgUser setImage:[UIImage imageNamed:@"user.png"]];
@@ -411,9 +443,17 @@
       
     }
 }
+
 - (IBAction)hobbyTapped:(id)sender
 {
     [self.view endEditing:YES];
+    
+    _activeTxtFld = self.lblHobby;
+    [self resetPaddingBgColor];
+    [_activeTxtFld.paddingBGView setBackgroundColor:[UIColor colorWithRed:117/255.0f green:171/255.0f blue:35/255.0f alpha:1.0f]];
+    [_activeTxtFld setTextColor:[UIColor colorWithRed:117/255.0f green:171/255.0f blue:35/255.0f alpha:1.0f]];
+    
+    
     HobbiyViewController *hobbyVC;
     if(hobbyIdArray.count>0)
     {
@@ -429,7 +469,10 @@
     [hobbyVC setIsEdit:NO];
     [hobbyVC setIsFirst:YES];
     [self.navigationController pushViewController:hobbyVC animated:YES];
+    
 }
+
+
 -(void)ok1BtnTapped:(id)sender
 {
     // NSLog(@"ok1BtnTapped");
